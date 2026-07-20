@@ -22,8 +22,10 @@ Desktop.ini
 *.swo
 *~
 
-# --- Build / deploy artifacts ---
+# --- Node / build artifacts ---
+node_modules/
 dist/
 build/
 *.log
 .cache/
+*.tsbuildinfo
