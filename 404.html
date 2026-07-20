@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Page Not Found — Asankhya Capital</title>
+  <meta name="robots" content="noindex, follow" />
+  <meta name="theme-color" content="#070b16" />
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg-1: #070b16; --bg-2: #0d1526; --ink: #eef2f8; --muted: #9aa6bd;
+      --gold: #c6a15b; --gold-soft: rgba(198,161,91,.16); --hairline: rgba(255,255,255,.10);
+      --font-serif: Georgia, "Times New Roman", serif;
+      --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+    body {
+      min-height: 100vh; min-height: 100dvh;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      background:
+        radial-gradient(1000px 600px at 50% -10%, rgba(198,161,91,.10), transparent 60%),
+        linear-gradient(180deg, var(--bg-2), var(--bg-1) 60%, #05070f);
+      color: var(--ink); font-family: var(--font-sans); text-align: center; padding: 2rem 1.25rem;
+    }
+    .code { font-family: var(--font-serif); font-size: clamp(4rem, 16vw, 7rem); color: var(--gold); line-height: 1; }
+    h1 { font-family: var(--font-serif); font-weight: 400; font-size: clamp(1.4rem, 5vw, 2rem); margin-top: 1rem; }
+    p { color: var(--muted); margin-top: 0.9rem; max-width: 40ch; }
+    a {
+      display: inline-block; margin-top: 2rem; padding: 0.8rem 1.8rem;
+      border: 1px solid var(--hairline); border-radius: 999px; color: var(--ink);
+      text-decoration: none; font-size: 0.9rem; transition: all .25s ease;
+    }
+    a:hover, a:focus-visible { border-color: var(--gold); color: var(--gold); background: var(--gold-soft); }
+    a:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+  </style>
+</head>
+<body>
+  <div class="code">404</div>
+  <h1>Page Not Found</h1>
+  <p>The page you're looking for doesn't exist yet — our site is still coming together.</p>
+  <a href="/">Return home</a>
+</body>
+</html>

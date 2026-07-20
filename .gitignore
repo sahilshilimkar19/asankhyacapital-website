@@ -1,0 +1,29 @@
+# --- Secrets / credentials (NEVER commit) ---
+.env
+.env.*
+*.pem
+*.key
+aws.json
+credentials
+.aws/
+
+# --- OS cruft ---
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.DS_Store
+.Spotlight-V100
+.Trashes
+
+# --- Editor / IDE ---
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# --- Build / deploy artifacts ---
+dist/
+build/
+*.log
+.cache/

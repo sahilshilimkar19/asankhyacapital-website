@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0d1526"/>
+      <stop offset="0.55" stop-color="#070b16"/>
+      <stop offset="1" stop-color="#05070f"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="0%" r="70%">
+      <stop offset="0" stop-color="#c6a15b" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#c6a15b" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+
+  <!-- Monogram -->
+  <circle cx="600" cy="205" r="52" fill="none" stroke="#c6a15b" stroke-width="2"/>
+  <text x="600" y="207" font-family="Georgia, 'Times New Roman', serif" font-size="60"
+        fill="#c6a15b" text-anchor="middle" dominant-baseline="central">A</text>
+
+  <!-- Wordmark -->
+  <text x="600" y="360" font-family="Georgia, 'Times New Roman', serif" font-size="82"
+        fill="#eef2f8" text-anchor="middle" letter-spacing="2">Asankhya</text>
+  <text x="600" y="410" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="24"
+        fill="#c6a15b" text-anchor="middle" letter-spacing="14">CAPITAL</text>
+
+  <!-- Divider -->
+  <rect x="560" y="452" width="80" height="1.5" fill="#c6a15b" opacity="0.7"/>
+
+  <!-- Tagline -->
+  <text x="600" y="512" font-family="Georgia, 'Times New Roman', serif" font-size="30"
+        font-style="italic" fill="#9aa6bd" text-anchor="middle">Boundless opportunity. Disciplined capital.</text>
+
+  <!-- Status -->
+  <text x="600" y="562" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="18"
+        fill="#6b7793" text-anchor="middle" letter-spacing="6">LAUNCHING SOON</text>
+</svg>
