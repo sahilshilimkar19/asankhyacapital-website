@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <style>
+    .tile { fill: #FBFAF7; }
+    .ring { stroke: #9A742F; }
+    .glyph { fill: #17130C; }
+    @media (prefers-color-scheme: dark) {
+      .tile { fill: #17130C; }
+      .glyph { fill: #FBFAF7; }
+    }
+  </style>
+  <rect class="tile" width="64" height="64" rx="12"/>
+  <circle class="ring" cx="32" cy="32" r="24" fill="none" stroke-width="2"/>
+  <text class="glyph" x="32" y="33" font-family="Georgia, 'Times New Roman', serif" font-size="34"
+        text-anchor="middle" dominant-baseline="central">A</text>
+</svg>
