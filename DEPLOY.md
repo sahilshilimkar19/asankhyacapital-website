@@ -18,7 +18,11 @@ Replace every `<PLACEHOLDER>` with your real value as you go. Suggested bucket n
 ## Prerequisites
 
 1. **AWS account** with admin (or equivalent) access.
-2. **AWS CLI v2** installed on Windows — https://aws.amazon.com/cli/ — then configure it:
+2. **Node.js ≥ 20.19** (the site is a Vite + React build) — then install dependencies once:
+   ```powershell
+   npm ci
+   ```
+3. **AWS CLI v2** installed on Windows — https://aws.amazon.com/cli/ — then configure it:
    ```powershell
    aws configure
    # AWS Access Key ID:     <from IAM>
@@ -45,13 +49,12 @@ aws s3api put-public-access-block --bucket asankhya-capital-site `
 ```
 (New S3 buckets are encrypted by default with SSE-S3 — nothing extra needed.)
 
-## Step 2 — Upload the site
+## Step 2 — Build and upload the site
 
-From the project root:
+From the project root (the script builds `dist/` and syncs it with correct cache headers;
+without `-DistributionId` it simply skips the CloudFront invalidation, which doesn't exist yet):
 ```powershell
-aws s3 sync . s3://asankhya-capital-site `
-  --delete --exclude ".git/*" --exclude ".gitignore" --exclude "*.ps1" `
-  --exclude "README.md" --exclude "DEPLOY.md" --exclude "LICENSE"
+./deploy.ps1 -Bucket asankhya-capital-site
 ```
 
 ## Step 3 — Request the TLS certificate (in us-east-1!)
@@ -177,7 +180,8 @@ After all of the above is done once, publishing changes is a single command:
 ```powershell
 ./deploy.ps1 -Bucket asankhya-capital-site -DistributionId <DISTRIBUTION_ID>
 ```
-It syncs to S3 and invalidates the CloudFront cache so changes appear within seconds.
+It runs the production build, syncs `dist/` to S3 (HTML short-cached, hashed assets and
+fonts immutable), and invalidates the CloudFront cache so changes appear within seconds.
 
 ---
 
