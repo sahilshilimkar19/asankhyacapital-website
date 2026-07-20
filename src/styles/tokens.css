@@ -1,0 +1,49 @@
+/* ============================================================
+   Asankhya Capital — Design tokens
+   Editorial minimal light: paper, ink, one bronze accent.
+   ============================================================ */
+:root {
+  /* ---- Color: warm paper + ink + bronze ---- */
+  --paper: #fbfaf7;          /* page background */
+  --paper-bright: #fdfcfa;   /* gradient top */
+  --paper-deep: #f4f0e8;     /* gradient base / subtle wash */
+  --ink: #17130c;            /* display text */
+  --ink-2: #4e4839;          /* body text */
+  --ink-3: #8b8372;          /* faint text, footer */
+  --bronze: #9a742f;         /* accent — rules, monogram, large text */
+  --bronze-ink: #77591f;     /* accent for small text (≥4.5:1 on paper) */
+  --hairline: rgba(23, 19, 12, 0.14);
+  --bronze-glow: rgba(154, 116, 47, 0.06);   /* ambient / spotlight tint */
+  --cool-glow: rgba(60, 70, 90, 0.03);       /* secondary ambient blob */
+
+  /* ---- Typography ---- */
+  --font-serif: "Fraunces", Georgia, "Iowan Old Style", "Palatino Linotype", serif;
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+  --text-display: clamp(2.75rem, 1.8rem + 5.2vw, 4.75rem);
+  --text-tagline: clamp(1.2rem, 1rem + 1vw, 1.55rem);
+  --text-body: clamp(0.95rem, 0.9rem + 0.3vw, 1.0625rem);
+  --text-label: 0.72rem;            /* tracked uppercase */
+  --track-label: 0.24em;
+  --track-wordmark-sub: 0.45em;
+
+  /* ---- Spacing rhythm (4px base) ---- */
+  --s2: 0.5rem;
+  --s3: 0.75rem;
+  --s4: 1rem;
+  --s5: 1.5rem;
+  --s6: 2rem;
+  --s7: 3rem;
+  --s8: 4rem;
+  --s9: 6rem;
+
+  /* ---- Motion ---- */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --dur-reveal: 950ms;
+  --reveal-base: 150ms;
+  --reveal-step: 110ms;
+
+  /* ---- Cursor position (written by useCursorParallax) ---- */
+  --cx: 0.5;
+  --cy: 0.5;
+}

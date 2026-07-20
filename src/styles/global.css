@@ -1,0 +1,140 @@
+/* ============================================================
+   Asankhya Capital — Global styles
+   Reset, fonts, base type, reveal system, reduced motion.
+   ============================================================ */
+@import "./tokens.css";
+
+/* ---- Fonts (self-hosted, zero external requests) ---- */
+@font-face {
+  font-family: "Fraunces";
+  src: url("/fonts/fraunces-v1.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Fraunces";
+  src: url("/fonts/fraunces-italic-v1.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+/* Metric-tuned fallback to minimize layout shift while Fraunces loads */
+@font-face {
+  font-family: "Fraunces-fallback";
+  src: local("Georgia");
+  size-adjust: 97%;
+  ascent-override: 96%;
+  descent-override: 24%;
+}
+
+/* ---- Reset ---- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: var(--text-body);
+  line-height: 1.6;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+#root {
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+/* ---- Focus visibility (consistent bronze rings) ---- */
+:focus-visible {
+  outline: 2px solid var(--bronze);
+  outline-offset: 4px;
+}
+
+::selection {
+  background: rgba(154, 116, 47, 0.18);
+}
+
+/* ============================================================
+   Entrance reveal system
+   Usage: data-reveal + style="--reveal-i: n"
+   ============================================================ */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(14px);
+  animation: reveal var(--dur-reveal) var(--ease-out-expo)
+    calc(var(--reveal-base) + var(--reveal-i, 0) * var(--reveal-step)) both;
+}
+
+@keyframes reveal {
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Hairline rule draws outward from center */
+[data-reveal="rule"] {
+  transform: scaleX(0);
+  animation-name: reveal-rule;
+  animation-duration: 700ms;
+}
+
+@keyframes reveal-rule {
+  to {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+}
+
+/* Monogram settles from a slight scale */
+[data-reveal="scale"] {
+  transform: translateY(10px) scale(0.96);
+}
+
+/* ============================================================
+   Shared keyframes (ambient drift, breathing dot)
+   ============================================================ */
+@keyframes drift-a {
+  from { transform: translate3d(-3%, -2%, 0) scale(1); }
+  to   { transform: translate3d(4%, 3%, 0) scale(1.12); }
+}
+
+@keyframes drift-b {
+  from { transform: translate3d(3%, 2%, 0) scale(1.08); }
+  to   { transform: translate3d(-4%, -3%, 0) scale(1); }
+}
+
+@keyframes breathe {
+  from { opacity: 0.35; transform: scale(1); }
+  to   { opacity: 1; transform: scale(1.15); }
+}
+
+/* ============================================================
+   Reduced motion: everything static, everything visible
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  [data-reveal] {
+    opacity: 1;
+    transform: none;
+  }
+}

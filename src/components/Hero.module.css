@@ -1,0 +1,108 @@
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* ---- Monogram ---- */
+.monogram {
+  width: 72px;
+  height: 72px;
+  border: 1px solid var(--bronze);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  margin-bottom: var(--s7);
+}
+
+.monogram span {
+  font-family: var(--font-serif);
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-size: 2rem;
+  color: var(--ink);
+  line-height: 1;
+  transform: translateY(1px);
+}
+
+/* ---- Wordmark ---- */
+.wordmark {
+  font-family: var(--font-serif);
+  font-optical-sizing: auto;
+  font-weight: 380;
+  font-size: var(--text-display);
+  letter-spacing: -0.015em;
+  line-height: 1.02;
+  color: var(--ink);
+  text-wrap: balance;
+}
+
+/* Transforms need a box — reveal spans inside the h1 must not be inline */
+.wordmarkMain {
+  display: block;
+}
+
+.wordmarkSub {
+  display: block;
+  margin-top: var(--s4);
+  font-family: var(--font-sans);
+  font-size: var(--text-label);
+  font-weight: 600;
+  letter-spacing: var(--track-wordmark-sub);
+  text-indent: var(--track-wordmark-sub); /* optical centering for tracked text */
+  text-transform: uppercase;
+  color: var(--bronze-ink);
+}
+
+/* ---- Hairline rule ---- */
+.rule {
+  width: 64px;
+  height: 1px;
+  background: var(--bronze);
+  opacity: 0.85;
+  margin: var(--s6) 0;
+}
+
+/* ---- Status ---- */
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-sans);
+  font-size: var(--text-label);
+  font-weight: 600;
+  letter-spacing: var(--track-label);
+  text-indent: var(--track-label);
+  text-transform: uppercase;
+  color: var(--bronze-ink);
+  margin-bottom: var(--s5);
+}
+
+.statusDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--bronze);
+  animation: breathe 3.2s ease-in-out infinite alternate;
+}
+
+/* ---- Copy ---- */
+.tagline {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 420;
+  font-size: var(--text-tagline);
+  line-height: 1.4;
+  color: var(--ink);
+  max-width: 28ch;
+  text-wrap: balance;
+}
+
+.description {
+  margin-top: var(--s4);
+  font-size: var(--text-body);
+  line-height: 1.7;
+  color: var(--ink-2);
+  max-width: 46ch;
+}

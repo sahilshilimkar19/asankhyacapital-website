@@ -1,0 +1,23 @@
+.page {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--s8) var(--s5);
+}
+
+/* Content plane: counter-moves gently against the ambient blobs for depth */
+.content {
+  width: 100%;
+  max-width: 640px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: translate3d(
+    calc((var(--cx) - 0.5) * 4px),
+    calc((var(--cy) - 0.5) * 4px),
+    0
+  );
+}
