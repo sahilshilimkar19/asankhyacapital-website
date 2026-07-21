@@ -1,31 +1,23 @@
 /* ============================================================
    Asankhya Capital — Global styles
-   Reset, fonts, base type, reveal system, reduced motion.
+   Reset, fonts, base type, reveal + motif systems, reduced motion.
    ============================================================ */
 @import "./tokens.css";
 
 /* ---- Fonts (self-hosted, zero external requests) ---- */
 @font-face {
-  font-family: "Fraunces";
-  src: url("/fonts/fraunces-v1.woff2") format("woff2");
-  font-weight: 100 900;
+  font-family: "Marcellus";
+  src: url("/fonts/marcellus-v14-latin.woff2") format("woff2");
+  font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: "Fraunces";
-  src: url("/fonts/fraunces-italic-v1.woff2") format("woff2");
-  font-weight: 100 900;
-  font-style: italic;
+  font-family: "IBM Plex Sans";
+  src: url("/fonts/ibm-plex-sans-v23-latin-600.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
   font-display: swap;
-}
-/* Metric-tuned fallback to minimize layout shift while Fraunces loads */
-@font-face {
-  font-family: "Fraunces-fallback";
-  src: local("Georgia");
-  size-adjust: 97%;
-  ascent-override: 96%;
-  descent-override: 24%;
 }
 
 /* ---- Reset ---- */
@@ -42,7 +34,10 @@ html {
 }
 
 body {
-  background: var(--paper);
+  background:
+    radial-gradient(1200px 720px at 50% 8%, rgba(255, 255, 255, 0.9), transparent 60%),
+    linear-gradient(180deg, var(--bg-bright), var(--bg) 45%, var(--bg-deep) 130%);
+  background-color: var(--bg);
   color: var(--ink);
   font-family: var(--font-sans);
   font-size: var(--text-body);
@@ -57,14 +52,14 @@ body {
   min-height: 100dvh;
 }
 
-/* ---- Focus visibility (consistent bronze rings) ---- */
+/* ---- Focus visibility (consistent navy rings) ---- */
 :focus-visible {
-  outline: 2px solid var(--bronze);
+  outline: 2px solid var(--navy);
   outline-offset: 4px;
 }
 
 ::selection {
-  background: rgba(154, 116, 47, 0.18);
+  background: rgba(44, 74, 99, 0.16);
 }
 
 /* ============================================================
@@ -85,41 +80,28 @@ body {
   }
 }
 
-/* Hairline rule draws outward from center */
-[data-reveal="rule"] {
-  transform: scaleX(0);
-  animation-name: reveal-rule;
-  animation-duration: 700ms;
-}
-
-@keyframes reveal-rule {
-  to {
-    opacity: 1;
-    transform: scaleX(1);
-  }
-}
-
-/* Monogram settles from a slight scale */
-[data-reveal="scale"] {
-  transform: translateY(10px) scale(0.96);
-}
-
 /* ============================================================
-   Shared keyframes (ambient drift, breathing dot)
+   Circle motif system
+   Usage: data-draw + --dash (stroke length), --d (delay),
+   optional --draw-dur; data-fade + --d for the dots.
    ============================================================ */
-@keyframes drift-a {
-  from { transform: translate3d(-3%, -2%, 0) scale(1); }
-  to   { transform: translate3d(4%, 3%, 0) scale(1.12); }
+[data-draw] {
+  stroke-dasharray: var(--dash);
+  stroke-dashoffset: var(--dash);
+  animation: draw var(--draw-dur, 1100ms) var(--ease-out-expo) var(--d, 0ms) forwards;
 }
 
-@keyframes drift-b {
-  from { transform: translate3d(3%, 2%, 0) scale(1.08); }
-  to   { transform: translate3d(-4%, -3%, 0) scale(1); }
+@keyframes draw {
+  to { stroke-dashoffset: 0; }
 }
 
-@keyframes breathe {
-  from { opacity: 0.35; transform: scale(1); }
-  to   { opacity: 1; transform: scale(1.15); }
+[data-fade] {
+  opacity: 0;
+  animation: fade-in 600ms ease-out var(--d, 0ms) forwards;
+}
+
+@keyframes fade-in {
+  to { opacity: 1; }
 }
 
 /* ============================================================
@@ -136,5 +118,15 @@ body {
   [data-reveal] {
     opacity: 1;
     transform: none;
+  }
+
+  /* Circles/tick fully drawn, dots visible */
+  [data-draw] {
+    stroke-dasharray: none;
+    stroke-dashoffset: 0;
+  }
+
+  [data-fade] {
+    opacity: 1;
   }
 }

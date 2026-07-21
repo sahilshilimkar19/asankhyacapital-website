@@ -1,31 +1,25 @@
 /* ============================================================
    Asankhya Capital — Design tokens
-   Editorial minimal light: paper, ink, one bronze accent.
+   Structured minimal light: cool near-white, ink, one navy accent.
    ============================================================ */
 :root {
-  /* ---- Color: warm paper + ink + bronze ---- */
-  --paper: #fbfaf7;          /* page background */
-  --paper-bright: #fdfcfa;   /* gradient top */
-  --paper-deep: #f4f0e8;     /* gradient base / subtle wash */
-  --ink: #17130c;            /* display text */
-  --ink-2: #4e4839;          /* body text */
-  --ink-3: #8b8372;          /* faint text, footer */
-  --bronze: #9a742f;         /* accent — rules, monogram, large text */
-  --bronze-ink: #77591f;     /* accent for small text (≥4.5:1 on paper) */
-  --hairline: rgba(23, 19, 12, 0.14);
-  --bronze-glow: rgba(154, 116, 47, 0.06);   /* ambient / spotlight tint */
-  --cool-glow: rgba(60, 70, 90, 0.03);       /* secondary ambient blob */
+  /* ---- Color: cool near-white + ink + navy ---- */
+  --bg: #f7f6f2;             /* page background */
+  --bg-bright: #faf9f6;      /* gradient top */
+  --bg-deep: #f1efe9;        /* gradient base */
+  --ink: #14171a;            /* display text */
+  --ink-2: #4b4f55;          /* body text */
+  --navy: #2c4a63;           /* accent — labels, motif ring, dot */
 
   /* ---- Typography ---- */
-  --font-serif: "Fraunces", Georgia, "Iowan Old Style", "Palatino Linotype", serif;
-  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-serif: "Marcellus", Georgia, "Times New Roman", serif;
+  --font-sans: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 
-  --text-display: clamp(2.75rem, 1.8rem + 5.2vw, 4.75rem);
-  --text-tagline: clamp(1.2rem, 1rem + 1vw, 1.55rem);
+  --text-display: clamp(2.75rem, 1.7rem + 5vw, 5rem);
   --text-body: clamp(0.95rem, 0.9rem + 0.3vw, 1.0625rem);
   --text-label: 0.72rem;            /* tracked uppercase */
-  --track-label: 0.24em;
-  --track-wordmark-sub: 0.45em;
+  --track-label: 0.26em;
+  --track-wordmark-sub: 0.5em;
 
   /* ---- Spacing rhythm (4px base) ---- */
   --s2: 0.5rem;
@@ -39,9 +33,9 @@
 
   /* ---- Motion ---- */
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
-  --dur-reveal: 950ms;
-  --reveal-base: 150ms;
-  --reveal-step: 110ms;
+  --dur-reveal: 650ms;
+  --reveal-base: 140ms;
+  --reveal-step: 135ms;
 
   /* ---- Cursor position (written by useCursorParallax) ---- */
   --cx: 0.5;

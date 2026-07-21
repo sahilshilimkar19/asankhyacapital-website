@@ -1,23 +1,19 @@
 .page {
   min-height: 100vh;
   min-height: 100dvh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: var(--s8) var(--s5);
+  display: grid;
+  place-items: center;
+  padding: var(--s6) var(--s5);
+  perspective: 1100px;
+  /* Centered cursor values (-0.5..0.5), derived from the hook's --cx/--cy.
+     Must live here — the element the hook writes to — so updates propagate. */
+  --mx: calc(var(--cx) - 0.5);
+  --my: calc(var(--cy) - 0.5);
 }
 
-/* Content plane: counter-moves gently against the ambient blobs for depth */
+/* Content plane: counter-moves gently against the motif tilt for depth */
 .content {
-  width: 100%;
-  max-width: 640px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  transform: translate3d(
-    calc((var(--cx) - 0.5) * 4px),
-    calc((var(--cy) - 0.5) * 4px),
-    0
-  );
+  grid-area: 1 / 1;
+  text-align: center;
+  transform: translate3d(calc(var(--mx) * -4px), calc(var(--my) * -4px), 0);
 }

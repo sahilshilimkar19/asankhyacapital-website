@@ -1,8 +1,6 @@
 import { useMemo, useRef } from 'react'
-import { AmbientBackground } from './components/AmbientBackground'
+import { CircleMotif } from './components/CircleMotif'
 import { Hero } from './components/Hero'
-import { Cta } from './components/Cta'
-import { Footer } from './components/Footer'
 import { useCursorParallax } from './hooks/useCursorParallax'
 import { usePrefersReducedMotion } from './hooks/usePrefersReducedMotion'
 import s from './App.module.css'
@@ -23,11 +21,9 @@ export default function App() {
 
   return (
     <div ref={pageRef} className={s.page}>
-      <AmbientBackground />
+      <CircleMotif />
       <main className={s.content}>
         <Hero />
-        <Cta />
-        <Footer />
       </main>
     </div>
   )
