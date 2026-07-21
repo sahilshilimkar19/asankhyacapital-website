@@ -1,0 +1,92 @@
+/* ============================================================
+   Ambient backdrop — paper grain + drafting grid + cursor bloom.
+   First child of .page, pinned behind CircleMotif and .content
+   via z-index: -1. All grid geometry is shared between the base
+   pass (::before) and the bloom pass (::after) through custom
+   properties so the two line grids overlay pixel-exactly.
+   ============================================================ */
+
+.backdrop {
+  position: absolute;
+  inset: 0;
+  z-index: -1; /* negative-z phase: behind transformed siblings regardless of DOM order */
+  pointer-events: none;
+  contain: layout paint;
+
+  /* Paper grain: inline feTurbulence tile (200px, stitched seamless,
+     desaturated, opacity baked into the rect). Self-contained data
+     URI — zero external requests. */
+  background-image: url("data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='200'%20height='200'%3E%3Cfilter%20id='g'%3E%3CfeTurbulence%20type='fractalNoise'%20baseFrequency='0.9'%20numOctaves='2'%20stitchTiles='stitch'/%3E%3CfeColorMatrix%20type='saturate'%20values='0'/%3E%3C/filter%3E%3Crect%20width='200'%20height='200'%20filter='url(%23g)'%20opacity='0.04'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
+
+  /* ---- Shared grid geometry ----
+     Plain linear-gradient TILES (not repeating-linear-gradient — that
+     fills the whole area, so background-position can't phase it).
+     The 1px line sits at the tile's start edge; the position
+     calc(50% + tile/2) resolves to (areaW - tile)/2 + tile/2 = areaW/2,
+     so a hairline lands on the element's exact center — which is the
+     motif's center (.page padding is per-axis symmetric).
+     90deg = vertical lines, 180deg = horizontal lines (both at the
+     start edge — 0deg would bias the horizontal axis by 1px).
+     Majors composite OVER minors, carrying only the delta ink. */
+  --grid-major: calc(var(--grid-cell) * 8);
+  --grid-layers:
+    linear-gradient(90deg,  var(--grid-line-major) 0 1px, transparent 1px),
+    linear-gradient(180deg, var(--grid-line-major) 0 1px, transparent 1px),
+    linear-gradient(90deg,  var(--grid-line) 0 1px, transparent 1px),
+    linear-gradient(180deg, var(--grid-line) 0 1px, transparent 1px);
+  --grid-sizes:
+    var(--grid-major) var(--grid-major),
+    var(--grid-major) var(--grid-major),
+    var(--grid-cell) var(--grid-cell),
+    var(--grid-cell) var(--grid-cell);
+  --grid-positions:
+    calc(50% + var(--grid-major) / 2) calc(50% + var(--grid-major) / 2),
+    calc(50% + var(--grid-major) / 2) calc(50% + var(--grid-major) / 2),
+    calc(50% + var(--grid-cell) / 2) calc(50% + var(--grid-cell) / 2),
+    calc(50% + var(--grid-cell) / 2) calc(50% + var(--grid-cell) / 2);
+}
+
+/* Both passes share identical geometry; only the masks differ. */
+.backdrop::before,
+.backdrop::after {
+  position: absolute;
+  inset: 0;
+  background-image: var(--grid-layers);
+  background-size: var(--grid-sizes);
+  background-position: var(--grid-positions);
+}
+
+/* Base pass: near-threshold grid, fading toward the edges so the
+   corners don't feel busy (they keep a whisper). */
+.backdrop::before {
+  content: "";
+  -webkit-mask-image: radial-gradient(120% 120% at 50% 50%, rgb(0 0 0) 45%, rgb(0 0 0 / 0.55) 75%, rgb(0 0 0 / 0.12) 100%);
+  mask-image: radial-gradient(120% 120% at 50% 50%, rgb(0 0 0) 45%, rgb(0 0 0 / 0.55) 75%, rgb(0 0 0 / 0.12) 100%);
+}
+
+/* Bloom pass: the same lines re-drawn inside a soft disc that follows
+   the smoothed cursor — overdraw composites to ~double alpha
+   (1-(1-a)^2). Fine-pointer devices only; elsewhere ::after has no
+   content and never renders. Under reduced motion the parallax hook
+   is disabled, so --cx/--cy hold their 0.5 defaults and the bloom
+   sits statically at center. Unlike background-position, a
+   radial-gradient's `at` percentages are direct box coordinates, so
+   --cx maps 1:1 to the cursor. */
+@media (hover: hover) and (pointer: fine) {
+  .backdrop::after {
+    content: "";
+    -webkit-mask-image: radial-gradient(
+      var(--grid-bloom-radius) circle at calc(var(--cx) * 100%) calc(var(--cy) * 100%),
+      rgb(0 0 0) 0%,
+      rgb(0 0 0 / 0.85) 45%,
+      transparent 100%
+    );
+    mask-image: radial-gradient(
+      var(--grid-bloom-radius) circle at calc(var(--cx) * 100%) calc(var(--cy) * 100%),
+      rgb(0 0 0) 0%,
+      rgb(0 0 0 / 0.85) 45%,
+      transparent 100%
+    );
+  }
+}

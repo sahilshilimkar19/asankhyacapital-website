@@ -1,4 +1,5 @@
 import { useMemo, useRef } from 'react'
+import { Backdrop } from './components/Backdrop'
 import { CircleMotif } from './components/CircleMotif'
 import { Hero } from './components/Hero'
 import { useCursorParallax } from './hooks/useCursorParallax'
@@ -21,6 +22,7 @@ export default function App() {
 
   return (
     <div ref={pageRef} className={s.page}>
+      <Backdrop />
       <CircleMotif />
       <main className={s.content}>
         <Hero />

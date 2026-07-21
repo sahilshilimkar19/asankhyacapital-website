@@ -49,7 +49,7 @@ npm run lint      # eslint
 │   └── fonts/                  # self-hosted Marcellus + IBM Plex Sans (woff2)
 ├── src/
 │   ├── main.tsx  App.tsx       # composition + cursor-parallax wiring
-│   ├── components/             # Reveal, CircleMotif, Hero
+│   ├── components/             # Reveal, CircleMotif, Hero, Backdrop
 │   ├── hooks/                  # useCursorParallax, usePrefersReducedMotion
 │   └── styles/
 │       ├── tokens.css          # the design system: colors, type scale, spacing, motion
@@ -64,6 +64,8 @@ npm run lint      # eslint
 
 - **Copy** (status, wordmark) — [src/components/Hero.tsx](src/components/Hero.tsx)
 - **Circle motif** (rings, draw-in timing, rotation) — [src/components/CircleMotif.tsx](src/components/CircleMotif.tsx)
+- **Backdrop** (drafting grid, cursor bloom, paper grain) — [src/components/Backdrop.tsx](src/components/Backdrop.tsx);
+  tune density/ink via the `--grid-*` tokens in [src/styles/tokens.css](src/styles/tokens.css)
 - **Colors / type scale / spacing** — [src/styles/tokens.css](src/styles/tokens.css)
 - **SEO / social meta** — [index.html](index.html)
 - **Entrance choreography** — reveal indices in the components; timing tokens

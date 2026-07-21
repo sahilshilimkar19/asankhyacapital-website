@@ -1,4 +1,8 @@
 .page {
+  /* Containing block for the absolutely positioned Backdrop. The
+     perspective below already establishes one, but the layout must
+     not silently break if perspective is ever removed. */
+  position: relative;
   min-height: 100vh;
   min-height: 100dvh;
   display: grid;

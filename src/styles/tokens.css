@@ -31,6 +31,12 @@
   --s8: 4rem;
   --s9: 6rem;
 
+  /* ---- Backdrop drafting grid ---- */
+  --grid-cell: 48px;                          /* minor cell size */
+  --grid-line: rgba(20, 23, 26, 0.05);        /* minor hairline ink */
+  --grid-line-major: rgba(20, 23, 26, 0.025); /* delta ink on every 8th line (composites ~0.074) */
+  --grid-bloom-radius: 320px;                 /* cursor bloom reach */
+
   /* ---- Motion ---- */
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
   --dur-reveal: 650ms;
