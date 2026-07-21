@@ -1,38 +1,34 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#FDFCFA"/>
-      <stop offset="0.55" stop-color="#FBFAF7"/>
-      <stop offset="1" stop-color="#F4F0E8"/>
+      <stop offset="0" stop-color="#FAF9F6"/>
+      <stop offset="0.45" stop-color="#F7F6F2"/>
+      <stop offset="1" stop-color="#F1EFE9"/>
     </linearGradient>
-    <radialGradient id="glow" cx="50%" cy="0%" r="70%">
-      <stop offset="0" stop-color="#9A742F" stop-opacity="0.08"/>
-      <stop offset="1" stop-color="#9A742F" stop-opacity="0"/>
+    <radialGradient id="glow" cx="50%" cy="8%" r="70%">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
     </radialGradient>
   </defs>
 
   <rect width="1200" height="630" fill="url(#bg)"/>
   <rect width="1200" height="630" fill="url(#glow)"/>
 
-  <!-- Monogram -->
-  <circle cx="600" cy="205" r="52" fill="none" stroke="#9A742F" stroke-width="2"/>
-  <text x="600" y="207" font-family="Georgia, 'Times New Roman', serif" font-size="60"
-        fill="#17130C" text-anchor="middle" dominant-baseline="central">A</text>
-
-  <!-- Wordmark -->
-  <text x="600" y="360" font-family="Georgia, 'Times New Roman', serif" font-size="82"
-        fill="#17130C" text-anchor="middle" letter-spacing="2">Asankhya</text>
-  <text x="600" y="410" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="24"
-        fill="#9A742F" text-anchor="middle" letter-spacing="14">CAPITAL</text>
-
-  <!-- Divider -->
-  <rect x="560" y="452" width="80" height="1.5" fill="#9A742F" opacity="0.8"/>
-
-  <!-- Tagline -->
-  <text x="600" y="512" font-family="Georgia, 'Times New Roman', serif" font-size="30"
-        font-style="italic" fill="#4E4839" text-anchor="middle">Boundless opportunity. Disciplined capital.</text>
+  <!-- Concentric circle motif behind the text stack -->
+  <g fill="none">
+    <circle cx="600" cy="315" r="150" stroke="rgba(20, 23, 26, 0.13)" stroke-width="1"/>
+    <circle cx="600" cy="315" r="210" stroke="rgba(44, 74, 99, 0.55)" stroke-width="1.5"/>
+    <circle cx="600" cy="315" r="270" stroke="rgba(20, 23, 26, 0.10)" stroke-width="1"/>
+  </g>
+  <circle cx="600" cy="105" r="6" fill="#2C4A63"/>
 
   <!-- Status -->
-  <text x="600" y="562" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="18"
-        fill="#8B8372" text-anchor="middle" letter-spacing="6">LAUNCHING SOON</text>
+  <text x="600" y="212" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="18"
+        font-weight="600" fill="#2C4A63" text-anchor="middle" letter-spacing="6">LAUNCHING SOON</text>
+
+  <!-- Wordmark -->
+  <text x="600" y="352" font-family="Georgia, 'Times New Roman', serif" font-size="96"
+        fill="#14171A" text-anchor="middle" letter-spacing="2">Asankhya</text>
+  <text x="600" y="420" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="26"
+        font-weight="600" fill="#2C4A63" text-anchor="middle" letter-spacing="16">CAPITAL</text>
 </svg>

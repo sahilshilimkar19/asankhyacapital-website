@@ -10,7 +10,7 @@ The official website for **Asankhya Capital**. This repository currently hosts t
 ## Tech & hosting
 
 **React 19 + Vite + TypeScript** single-page app with hand-written CSS (design tokens +
-CSS Modules — no Tailwind, no CSS-in-JS). Self-hosted Fraunces variable font.
+CSS Modules — no Tailwind, no CSS-in-JS). Self-hosted Marcellus + IBM Plex Sans fonts.
 **Zero third-party requests** at runtime.
 
 | Layer | Service |
@@ -46,14 +46,14 @@ npm run lint      # eslint
 │   ├── 404.html                # standalone branded not-found page (served by CloudFront)
 │   ├── favicon.svg  og-image.svg
 │   ├── robots.txt   sitemap.xml
-│   └── fonts/                  # self-hosted Fraunces variable font (woff2)
+│   └── fonts/                  # self-hosted Marcellus + IBM Plex Sans (woff2)
 ├── src/
 │   ├── main.tsx  App.tsx       # composition + cursor-parallax wiring
-│   ├── components/             # Reveal, AmbientBackground, Hero, Cta, Footer
+│   ├── components/             # Reveal, CircleMotif, Hero
 │   ├── hooks/                  # useCursorParallax, usePrefersReducedMotion
 │   └── styles/
 │       ├── tokens.css          # the design system: colors, type scale, spacing, motion
-│       └── global.css          # reset, @font-face, keyframes, reveal system
+│       └── global.css          # reset, @font-face, keyframes, reveal + motif systems
 ├── deploy.ps1                  # build + S3 sync + CloudFront invalidation
 └── DEPLOY.md                   # one-time AWS setup runbook
 ```
@@ -62,9 +62,8 @@ npm run lint      # eslint
 
 ## Editing the page
 
-- **Copy** (tagline, description, status) — [src/components/Hero.tsx](src/components/Hero.tsx)
-- **Contact email** — [src/components/Cta.tsx](src/components/Cta.tsx) and
-  [src/components/Footer.tsx](src/components/Footer.tsx)
+- **Copy** (status, wordmark) — [src/components/Hero.tsx](src/components/Hero.tsx)
+- **Circle motif** (rings, draw-in timing, rotation) — [src/components/CircleMotif.tsx](src/components/CircleMotif.tsx)
 - **Colors / type scale / spacing** — [src/styles/tokens.css](src/styles/tokens.css)
 - **SEO / social meta** — [index.html](index.html)
 - **Entrance choreography** — reveal indices in the components; timing tokens

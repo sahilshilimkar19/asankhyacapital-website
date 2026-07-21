@@ -1,15 +1,19 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
   <style>
-    .tile { fill: #FBFAF7; }
-    .ring { stroke: #9A742F; }
-    .glyph { fill: #17130C; }
+    .tile { fill: #F7F6F2; }
+    .ring { stroke: #2C4A63; }
+    .ring2 { stroke: #14171A; stroke-opacity: 0.18; }
+    .glyph { fill: #14171A; }
     @media (prefers-color-scheme: dark) {
-      .tile { fill: #17130C; }
-      .glyph { fill: #FBFAF7; }
+      .tile { fill: #14171A; }
+      .ring { stroke: #7FA3C0; }
+      .ring2 { stroke: #F7F6F2; }
+      .glyph { fill: #F7F6F2; }
     }
   </style>
   <rect class="tile" width="64" height="64" rx="12"/>
+  <circle class="ring2" cx="32" cy="32" r="28" fill="none" stroke-width="1"/>
   <circle class="ring" cx="32" cy="32" r="24" fill="none" stroke-width="2"/>
-  <text class="glyph" x="32" y="33" font-family="Georgia, 'Times New Roman', serif" font-size="34"
+  <text class="glyph" x="32" y="33" font-family="Georgia, 'Times New Roman', serif" font-size="30"
         text-anchor="middle" dominant-baseline="central">A</text>
 </svg>
