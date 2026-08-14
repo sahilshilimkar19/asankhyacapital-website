@@ -1,63 +1,177 @@
 .hero {
+  padding: 90px 0 70px;
+  background: var(--white);
+}
+
+.inner {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.title {
+  font-size: 44px;
+  line-height: 1.18;
+  margin: 18px 0 22px;
+}
+
+.accent {
+  font-style: normal;
+  color: var(--gold);
+}
+
+.lede {
+  font-size: 17px;
+  color: var(--steel);
+  max-width: 520px;
+  margin-bottom: 32px;
+}
+
+.btnRow {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
+  gap: 16px;
 }
 
-/* ---- Status ---- */
-.status {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.6rem;
+.stats {
+  display: flex;
+  gap: 44px;
+  margin-top: 44px;
+  padding-top: 28px;
+  border-top: 1px solid var(--line);
   font-family: var(--font-sans);
-  font-size: var(--text-label);
-  font-weight: 600;
-  letter-spacing: var(--track-label);
-  text-indent: var(--track-label); /* optical centering for tracked text */
-  text-transform: uppercase;
-  color: var(--navy);
-  margin-bottom: clamp(1.4rem, 1rem + 1.5vw, 2.4rem);
 }
 
-.statusDot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--navy);
-  animation: breathe 3.4s ease-in-out infinite alternate;
-}
-
-/* Declared here (not global.css) so CSS Modules scopes the name together
-   with the animation reference above */
-@keyframes breathe {
-  from { opacity: 0.35; transform: scale(1); }
-  to   { opacity: 1; transform: scale(1.35); }
-}
-
-/* ---- Wordmark ---- */
-.wordmark {
+.stat b {
+  display: block;
   font-family: var(--font-serif);
-  font-weight: 400;
-  font-size: var(--text-display);
-  letter-spacing: 0.01em;
-  line-height: 1;
-  color: var(--ink);
-}
-
-/* Transforms need a box — reveal spans inside the h1 must not be inline */
-.wordmarkMain {
-  display: block;
-}
-
-.wordmarkSub {
-  display: block;
-  margin-top: 1.15rem;
-  font-family: var(--font-sans);
-  font-size: var(--text-label);
-  font-weight: 600;
-  letter-spacing: var(--track-wordmark-sub);
-  text-indent: var(--track-wordmark-sub); /* optical centering for tracked text */
-  text-transform: uppercase;
+  font-size: 22px;
   color: var(--navy);
+}
+
+.stat span {
+  font-size: 11px;
+  color: var(--steel-light);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+/* ---- Scorecard ---- */
+.card {
+  background: var(--navy);
+  border-radius: 4px;
+  padding: 34px 30px;
+}
+
+.cardLabel {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  margin-bottom: 6px;
+}
+
+.cardTitle {
+  color: #fff;
+  font-size: 20px;
+  margin-bottom: 22px;
+}
+
+.rows {
+  list-style: none;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+.num {
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--gold);
+  color: var(--navy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.rowBody {
+  flex: 1;
+  min-width: 0;
+  display: block;
+}
+
+.rowName {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 12.5px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 5px;
+}
+
+.barTrack {
+  display: block;
+  height: 5px;
+  border-radius: 3px;
+  background: var(--card-navy);
+  overflow: hidden;
+}
+
+/* Width defaults to the final value — fails visible if the reveal
+   never fires. The group's "pending" state pulls it to zero, so the
+   sweep runs when the state flips to "in". */
+.barFill {
+  display: block;
+  height: 100%;
+  border-radius: 3px;
+  width: var(--bar);
+  background: linear-gradient(90deg, var(--gold-light), var(--gold));
+  transition: width 900ms var(--ease-out-expo) calc(180ms + var(--sr-i, 0) * 80ms);
+}
+
+.rows[data-sr-group="pending"] .barFill {
+  width: 0;
+}
+
+/* The global reduced-motion block can't reach this hashed class */
+@media (prefers-reduced-motion: reduce) {
+  .barFill {
+    width: var(--bar) !important;
+  }
+}
+
+.footnote {
+  font-family: var(--font-sans);
+  font-size: 10.5px;
+  font-style: italic;
+  color: var(--dark-dim);
+  margin-top: 18px;
+}
+
+@media (max-width: 900px) {
+  .inner {
+    grid-template-columns: 1fr;
+  }
+
+  .title {
+    font-size: 34px;
+  }
+}
+
+@media (max-width: 560px) {
+  .stats {
+    flex-direction: column;
+    gap: 16px;
+  }
 }

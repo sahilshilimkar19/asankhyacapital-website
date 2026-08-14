@@ -1,0 +1,29 @@
+.lockup {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.word {
+  /* No font-family in the wireframe rule — it inherits the Georgia body */
+  font-family: var(--font-serif);
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--navy);
+  white-space: nowrap;
+}
+
+.word b {
+  font-weight: 700;
+  color: var(--gold);
+}
+
+.onDark .word {
+  color: #ffffff;
+}
+
+.onDark .word b {
+  color: var(--gold-light);
+}

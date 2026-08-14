@@ -1,0 +1,30 @@
+.band {
+  background: var(--cream);
+  text-align: center;
+}
+
+.figure {
+  max-width: 100%;
+}
+
+.quote {
+  font-size: 28px;
+  line-height: 1.45;
+  max-width: 820px;
+  margin: 0 auto;
+  color: var(--navy);
+}
+
+.accent {
+  font-style: normal;
+  color: var(--gold);
+}
+
+.attribution {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--steel-light);
+  margin-top: 26px;
+}

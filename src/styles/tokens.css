@@ -1,49 +1,38 @@
 /* ============================================================
    Asankhya Capital — Design tokens
-   Structured minimal light: cool near-white, ink, one navy accent.
+   Mirrors the approved homepage wireframe exactly: navy + gold,
+   Georgia display over Arial, fixed 1180px container.
    ============================================================ */
 :root {
-  /* ---- Color: cool near-white + ink + navy ---- */
-  --bg: #f7f6f2;             /* page background */
-  --bg-bright: #faf9f6;      /* gradient top */
-  --bg-deep: #f1efe9;        /* gradient base */
-  --ink: #14171a;            /* display text */
-  --ink-2: #4b4f55;          /* body text */
-  --navy: #2c4a63;           /* accent — labels, motif ring, dot */
+  /* ---- Palette (wireframe verbatim) ---- */
+  --navy: #0a2240;         /* primary ground, headings, body text */
+  --navy-2: #12325c;       /* second river card, navy hover */
+  --card-navy: #1b3a63;    /* third river card, bar tracks, footer rule */
+  --gold: #9c7a3c;         /* accents, eyebrows, borders, fund button */
+  --gold-light: #c9a567;   /* small gold labels on navy */
+  --cream: #faf9f6;        /* soft bands, insight tag band */
+  --steel: #4a5768;        /* body text on light */
+  --steel-light: #8592a0;  /* muted labels */
+  --line: #dce1e6;         /* hairlines, card borders */
+  --white: #ffffff;
+  --dark-body: #c6cdd6;    /* paragraph text on navy bands */
+  --dark-dim: #8fa0b3;     /* fine print on navy */
+  --footer-text: #aeb8c4;  /* footer links/items */
+  --footer-legal: #70808f; /* footer legal fine print */
 
-  /* ---- Typography ---- */
-  --font-serif: "Marcellus", Georgia, "Times New Roman", serif;
-  --font-sans: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  /* ---- Typography (system fonts only) ---- */
+  --font-serif: Georgia, "Cambria", serif;
+  --font-sans: Arial, Helvetica, sans-serif;
 
-  --text-display: clamp(2.75rem, 1.7rem + 5vw, 5rem);
-  --text-body: clamp(0.95rem, 0.9rem + 0.3vw, 1.0625rem);
-  --text-label: 0.72rem;            /* tracked uppercase */
-  --track-label: 0.26em;
-  --track-wordmark-sub: 0.5em;
-
-  /* ---- Spacing rhythm (4px base) ---- */
-  --s2: 0.5rem;
-  --s3: 0.75rem;
-  --s4: 1rem;
-  --s5: 1.5rem;
-  --s6: 2rem;
-  --s7: 3rem;
-  --s8: 4rem;
-  --s9: 6rem;
-
-  /* ---- Backdrop drafting grid ---- */
-  --grid-cell: 48px;                          /* minor cell size */
-  --grid-line: rgba(20, 23, 26, 0.05);        /* minor hairline ink */
-  --grid-line-major: rgba(20, 23, 26, 0.025); /* delta ink on every 8th line (composites ~0.074) */
-  --grid-bloom-radius: 320px;                 /* cursor bloom reach */
+  /* ---- Layout ---- */
+  --container: 1180px;
+  --gutter: 40px;
+  --section-pad: 96px;
+  --nav-h: 74px;
 
   /* ---- Motion ---- */
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
   --dur-reveal: 650ms;
   --reveal-base: 140ms;
   --reveal-step: 135ms;
-
-  /* ---- Cursor position (written by useCursorParallax) ---- */
-  --cx: 0.5;
-  --cy: 0.5;
 }

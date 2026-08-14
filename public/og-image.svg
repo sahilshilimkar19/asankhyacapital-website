@@ -1,34 +1,31 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#FAF9F6"/>
-      <stop offset="0.45" stop-color="#F7F6F2"/>
-      <stop offset="1" stop-color="#F1EFE9"/>
-    </linearGradient>
-    <radialGradient id="glow" cx="50%" cy="8%" r="70%">
-      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.9"/>
-      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+    <radialGradient id="glow" cx="18%" cy="12%" r="80%">
+      <stop offset="0" stop-color="#12325C"/>
+      <stop offset="1" stop-color="#0A2240"/>
     </radialGradient>
   </defs>
 
-  <rect width="1200" height="630" fill="url(#bg)"/>
   <rect width="1200" height="630" fill="url(#glow)"/>
 
-  <!-- Concentric circle motif behind the text stack -->
-  <g fill="none">
-    <circle cx="600" cy="315" r="150" stroke="rgba(20, 23, 26, 0.13)" stroke-width="1"/>
-    <circle cx="600" cy="315" r="210" stroke="rgba(44, 74, 99, 0.55)" stroke-width="1.5"/>
-    <circle cx="600" cy="315" r="270" stroke="rgba(20, 23, 26, 0.10)" stroke-width="1"/>
-  </g>
-  <circle cx="600" cy="105" r="6" fill="#2C4A63"/>
+  <!-- Ring flourish bleeding off the right edge -->
+  <circle cx="1120" cy="315" r="180" fill="none" stroke="rgba(201,165,103,0.25)" stroke-width="1.5"/>
+  <circle cx="1120" cy="315" r="260" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+  <circle cx="1120" cy="315" r="340" fill="none" stroke="rgba(201,165,103,0.12)" stroke-width="1"/>
 
-  <!-- Status -->
-  <text x="600" y="212" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="18"
-        font-weight="600" fill="#2C4A63" text-anchor="middle" letter-spacing="6">LAUNCHING SOON</text>
+  <!-- A+C mark -->
+  <g transform="translate(96,96) scale(0.7)">
+    <path d="M25,155 L70,50 L115,155" fill="none" stroke="#FFFFFF" stroke-width="10" stroke-linecap="square" stroke-linejoin="miter"/>
+    <path d="M177.1,61.7 A50,50 0 1 0 177.1,138.3" fill="none" stroke="#C9A567" stroke-width="10" stroke-linecap="round"/>
+  </g>
 
   <!-- Wordmark -->
-  <text x="600" y="352" font-family="Georgia, 'Times New Roman', serif" font-size="96"
-        fill="#14171A" text-anchor="middle" letter-spacing="2">Asankhya</text>
-  <text x="600" y="420" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="26"
-        font-weight="600" fill="#2C4A63" text-anchor="middle" letter-spacing="16">CAPITAL</text>
+  <text x="96" y="322" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="30" font-weight="600" letter-spacing="7" fill="#FAF9F6">ASANKHYA <tspan fill="#C9A567">CAPITAL</tspan></text>
+
+  <!-- Tagline -->
+  <text x="96" y="404" font-family="Georgia, 'Times New Roman', serif" font-size="40" fill="#FAF9F6">Enduring businesses, at the intersection of</text>
+  <text x="96" y="458" font-family="Georgia, 'Times New Roman', serif" font-size="40" fill="#FAF9F6">structural growth and exceptional execution.</text>
+
+  <!-- Bottom line -->
+  <text x="96" y="546" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="19" letter-spacing="2" fill="#8592A0">A PROPOSED SEBI CATEGORY III ALTERNATIVE INVESTMENT FUND · INDIA</text>
 </svg>

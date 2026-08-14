@@ -1,0 +1,54 @@
+.band {
+  background: var(--navy);
+  color: #fff;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.title {
+  color: #fff;
+  font-size: 30px;
+  margin: 12px 0 18px;
+}
+
+.body {
+  color: var(--dark-body);
+  font-size: 15px;
+  margin-bottom: 26px;
+}
+
+.facts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.fact {
+  border-left: 2px solid var(--gold);
+  padding-left: 16px;
+}
+
+.fact b {
+  display: block;
+  font-size: 19px;
+  color: #fff;
+}
+
+.fact span {
+  font-family: var(--font-sans);
+  font-size: 10.5px;
+  color: var(--dark-dim);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

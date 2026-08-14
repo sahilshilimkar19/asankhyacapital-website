@@ -1,0 +1,120 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: var(--white);
+}
+
+/* Border sits on the container-width bar — it stops at the container
+   edges, exactly as the wireframe draws it */
+.bar {
+  padding-block: 22px;
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+/* Flex, as the wireframe's .logo-mark anchor — an inline anchor's
+   line box would add ~6px of descender space under the 30px mark */
+.home {
+  display: flex;
+  flex-shrink: 0;
+}
+
+/* Default (stretch) alignment, as the wireframe: the active link's
+   underline extends downward without shifting its text */
+.links {
+  display: flex;
+  gap: 34px;
+}
+
+.link {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--navy);
+  transition: color 0.25s ease;
+}
+
+.link:hover {
+  color: var(--gold);
+}
+
+.linkActive {
+  border-bottom: 2px solid var(--gold);
+  padding-bottom: 4px;
+}
+
+.menuLinkActive {
+  color: var(--gold);
+}
+
+/* ---- Mobile ---- */
+.menuBtn {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background: none;
+  border: 0;
+  color: var(--navy);
+  cursor: pointer;
+}
+
+.burger line {
+  transform-origin: 12px 12px;
+  transition: transform 0.3s var(--ease-out-expo);
+}
+
+.menuBtn[aria-expanded="true"] .burger line:first-child {
+  transform: translateY(4px) rotate(45deg);
+}
+
+.menuBtn[aria-expanded="true"] .burger line:last-child {
+  transform: translateY(-4px) rotate(-45deg);
+}
+
+.menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: var(--white);
+  border-bottom: 1px solid var(--line);
+  padding: 8px var(--gutter) 24px;
+}
+
+.menu nav {
+  display: flex;
+  flex-direction: column;
+}
+
+.menuLink {
+  display: flex;
+  align-items: center;
+  min-height: 48px;
+  font-family: var(--font-sans);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--navy);
+  border-bottom: 1px solid var(--line);
+}
+
+@media (max-width: 900px) {
+  .links {
+    display: none;
+  }
+
+  .menuBtn {
+    display: inline-flex;
+  }
+}
+
+@media (min-width: 900.02px) {
+  .menu {
+    display: none;
+  }
+}

@@ -1,0 +1,14 @@
+.band {
+  text-align: center;
+}
+
+.title {
+  font-size: 30px;
+  margin: 10px 0 16px;
+}
+
+.body {
+  color: var(--steel);
+  max-width: 520px;
+  margin: 0 auto;
+}

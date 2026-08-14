@@ -1,19 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
-  <style>
-    .tile { fill: #F7F6F2; }
-    .ring { stroke: #2C4A63; }
-    .ring2 { stroke: #14171A; stroke-opacity: 0.18; }
-    .glyph { fill: #14171A; }
-    @media (prefers-color-scheme: dark) {
-      .tile { fill: #14171A; }
-      .ring { stroke: #7FA3C0; }
-      .ring2 { stroke: #F7F6F2; }
-      .glyph { fill: #F7F6F2; }
-    }
-  </style>
-  <rect class="tile" width="64" height="64" rx="12"/>
-  <circle class="ring2" cx="32" cy="32" r="28" fill="none" stroke-width="1"/>
-  <circle class="ring" cx="32" cy="32" r="24" fill="none" stroke-width="2"/>
-  <text class="glyph" x="32" y="33" font-family="Georgia, 'Times New Roman', serif" font-size="30"
-        text-anchor="middle" dominant-baseline="central">A</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <rect width="200" height="200" rx="36" fill="#0A2240"/>
+  <g transform="translate(14,16) scale(0.86)">
+    <path d="M25,155 L70,50 L115,155" fill="none" stroke="#FFFFFF" stroke-width="18" stroke-linecap="square" stroke-linejoin="miter"/>
+    <path d="M177.1,61.7 A50,50 0 1 0 177.1,138.3" fill="none" stroke="#C9A567" stroke-width="18" stroke-linecap="round"/>
+  </g>
 </svg>

@@ -5,57 +5,55 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Page Not Found — Asankhya Capital</title>
   <meta name="robots" content="noindex, follow" />
-  <meta name="theme-color" content="#F7F6F2" />
+  <meta name="theme-color" content="#0A2240" />
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   <style>
-    @font-face {
-      font-family: "Marcellus";
-      src: url("/fonts/marcellus-v14-latin.woff2") format("woff2");
-      font-weight: 400;
-      font-display: swap;
-    }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --bg: #F7F6F2; --bg-bright: #FAF9F6; --bg-deep: #F1EFE9;
-      --ink: #14171A; --ink-2: #4B4F55;
-      --navy: #2C4A63;
-      --serif: "Marcellus", Georgia, "Times New Roman", serif;
-      --sans: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      --navy: #0A2240; --navy-2: #12325C;
+      --gold-light: #C9A567; --cream: #FAF9F6; --steel-light: #8592A0;
+      --serif: Georgia, "Cambria", serif;
+      --sans: Arial, Helvetica, sans-serif;
     }
     body {
       min-height: 100vh; min-height: 100dvh;
       display: flex; flex-direction: column; align-items: center; justify-content: center;
-      background:
-        radial-gradient(1200px 720px at 50% 8%, rgba(255, 255, 255, 0.9), transparent 60%),
-        linear-gradient(180deg, var(--bg-bright), var(--bg) 45%, var(--bg-deep) 130%);
-      background-color: var(--bg);
-      color: var(--ink); font-family: var(--sans); text-align: center;
+      background: linear-gradient(180deg, var(--navy), var(--navy-2) 130%);
+      color: var(--cream); font-family: var(--sans); text-align: center;
       padding: 2rem 1.25rem; -webkit-font-smoothing: antialiased;
     }
+    .mark { width: 56px; height: 56px; margin-bottom: 1.5rem; }
     .code {
       font-family: var(--serif); font-weight: 400;
-      font-size: clamp(4.5rem, 16vw, 7.5rem); color: var(--navy); line-height: 1;
+      font-size: clamp(4.5rem, 16vw, 7.5rem); color: var(--gold-light); line-height: 1;
     }
     h1 { font-family: var(--serif); font-weight: 400; font-size: clamp(1.4rem, 5vw, 2rem); margin-top: 1.25rem; }
-    p { color: var(--ink-2); margin-top: 1rem; max-width: 42ch; line-height: 1.65; }
+    p { color: var(--steel-light); margin-top: 1rem; max-width: 42ch; line-height: 1.65; }
     a {
-      display: inline-block; margin-top: 2.25rem; color: var(--ink); text-decoration: none;
+      display: inline-block; margin-top: 2.25rem; color: var(--cream); text-decoration: none;
       font-size: 0.95rem; letter-spacing: 0.02em; padding-bottom: 2px; position: relative;
     }
     a::after {
       content: ""; position: absolute; left: 0; bottom: 0; width: 100%; height: 1px;
-      background: var(--navy); transform: scaleX(0); transform-origin: left;
+      background: var(--gold-light); transform: scaleX(0); transform-origin: left;
       transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
     }
-    a:hover, a:focus-visible { color: var(--navy); }
+    a:hover, a:focus-visible { color: var(--gold-light); }
     a:hover::after, a:focus-visible::after { transform: scaleX(1); }
-    a:focus-visible { outline: 2px solid var(--navy); outline-offset: 4px; }
+    a:focus-visible { outline: 2px solid var(--gold-light); outline-offset: 4px; }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { transition: none !important; }
+    }
   </style>
 </head>
 <body>
+  <svg class="mark" viewBox="0 0 200 200" aria-hidden="true">
+    <path d="M25,155 L70,50 L115,155" fill="none" stroke="#FFFFFF" stroke-width="8" stroke-linecap="square" stroke-linejoin="miter"/>
+    <path d="M177.1,61.7 A50,50 0 1 0 177.1,138.3" fill="none" stroke="#C9A567" stroke-width="8" stroke-linecap="round"/>
+  </svg>
   <div class="code">404</div>
   <h1>Page Not Found</h1>
-  <p>The page you're looking for doesn't exist yet — our site is still coming together.</p>
+  <p>The page you're looking for doesn't exist. It may have moved, or it may not be built yet.</p>
   <a href="/">Return home &rarr;</a>
 </body>
 </html>

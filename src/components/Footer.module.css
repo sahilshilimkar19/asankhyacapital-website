@@ -1,0 +1,79 @@
+.footer {
+  background: var(--navy);
+  color: var(--footer-text);
+  padding: 70px 0 30px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr 1fr;
+  gap: 30px;
+  margin-bottom: 50px;
+}
+
+.brand {
+  max-width: 260px;
+}
+
+/* Block-level, as the wireframe's .logo-mark — an inline lockup's line
+   box would add ~6px of descender space above the blurb */
+.brand > span {
+  display: flex;
+}
+
+.blurb {
+  margin-top: 16px;
+  font-family: var(--font-sans);
+  font-size: 11.5px;
+  max-width: 240px;
+  color: var(--dark-dim);
+}
+
+.colTitle {
+  color: #fff;
+  font-family: var(--font-sans);
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+
+.list {
+  list-style: none;
+  font-family: var(--font-sans);
+  font-size: 12.5px;
+}
+
+.list li {
+  margin-bottom: 11px;
+  color: var(--footer-text);
+}
+
+.link {
+  transition: color 0.25s ease;
+}
+
+.link:hover {
+  color: #fff;
+}
+
+.legal {
+  border-top: 1px solid var(--card-navy);
+  padding-top: 22px;
+  font-family: var(--font-sans);
+  font-size: 10.5px;
+  color: var(--footer-legal);
+  text-align: center;
+}
+
+.legal p {
+  max-width: 900px;
+  margin: 0 auto 8px;
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
