@@ -1,0 +1,25 @@
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-sans);
+  font-size: 13px;
+}
+
+.table td {
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--line);
+}
+
+.table td:first-child {
+  color: var(--steel-light);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  width: 38%;
+  font-size: 11px;
+  text-transform: uppercase;
+}
+
+.table td:last-child {
+  color: var(--navy);
+  font-weight: 600;
+}

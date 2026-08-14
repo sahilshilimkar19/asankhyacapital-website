@@ -1,0 +1,62 @@
+.teamSection {
+  padding: 88px 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px;
+}
+
+.card {
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  overflow: hidden;
+  text-align: center;
+}
+
+.avatar {
+  width: 100%;
+  height: 220px;
+  background: var(--navy-2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--dark-dim);
+  font-family: var(--font-serif);
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.info {
+  padding: 22px 18px;
+}
+
+.roleTitle {
+  font-size: 15px;
+  margin-bottom: 6px;
+}
+
+.role {
+  font-family: var(--font-sans);
+  font-size: 10.5px;
+  color: var(--gold);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.blurb {
+  font-family: var(--font-sans);
+  font-size: 11.5px;
+  color: var(--steel);
+  line-height: 1.55;
+  text-align: left;
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

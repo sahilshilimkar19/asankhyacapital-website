@@ -1,0 +1,33 @@
+.story {
+  padding: 88px 0;
+}
+
+.cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.title {
+  font-size: 26px;
+  margin: 12px 0 16px;
+}
+
+.body {
+  color: var(--steel);
+  font-size: 14.5px;
+  line-height: 1.7;
+}
+
+.factCard {
+  background: var(--cream);
+  border-radius: 4px;
+  padding: 30px;
+}
+
+@media (max-width: 900px) {
+  .cols {
+    grid-template-columns: 1fr;
+  }
+}

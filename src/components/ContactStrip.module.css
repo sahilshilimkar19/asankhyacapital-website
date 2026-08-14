@@ -1,0 +1,33 @@
+.strip {
+  background: var(--cream);
+  padding: 88px 0;
+}
+
+/* Centered — the wireframe adds inline text-align:center on this grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  text-align: center;
+}
+
+.label {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--steel-light);
+  margin-bottom: 6px;
+}
+
+.item b {
+  font-size: 15px;
+  color: var(--navy);
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

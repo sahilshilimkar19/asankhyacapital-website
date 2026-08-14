@@ -1,0 +1,52 @@
+.commitment {
+  background: var(--cream);
+  padding: 88px 0;
+}
+
+.head {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.title {
+  font-size: 30px;
+  margin: 10px 0 12px;
+}
+
+.sub {
+  color: var(--steel);
+  max-width: 640px;
+  margin: 0 auto;
+  font-size: 15px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 30px;
+}
+
+.card h3 {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-family: var(--font-sans);
+  font-size: 12.5px;
+  color: var(--steel);
+  line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

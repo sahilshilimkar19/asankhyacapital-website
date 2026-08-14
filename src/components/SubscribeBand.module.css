@@ -1,0 +1,35 @@
+.band {
+  background: var(--cream);
+  text-align: center;
+  padding: 88px 0;
+}
+
+.title {
+  font-size: 26px;
+  margin: 12px 0 20px;
+}
+
+.row {
+  display: flex;
+  gap: 12px;
+  max-width: 440px;
+  margin-inline: auto;
+}
+
+.row input {
+  flex: 1;
+  min-width: 0;
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  padding: 13px 14px;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  color: var(--navy);
+  background: #fff;
+}
+
+.submit {
+  white-space: nowrap;
+  /* Match the wireframe's <a> button height (buttons reset line-height) */
+  line-height: 1.5;
+}

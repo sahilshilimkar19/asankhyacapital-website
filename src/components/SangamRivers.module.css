@@ -1,0 +1,27 @@
+.band {
+  background: var(--navy);
+  padding: 88px 0;
+}
+
+.cols {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px;
+}
+
+.title {
+  font-size: 24px;
+  margin: 12px 0 14px;
+  color: #fff;
+}
+
+/* Serif body, as the wireframe's .navy-section p — no font override */
+.body {
+  color: var(--dark-body);
+}
+
+@media (max-width: 900px) {
+  .cols {
+    grid-template-columns: 1fr;
+  }
+}

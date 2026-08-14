@@ -1,0 +1,52 @@
+.formSection {
+  padding: 20px 0 88px;
+}
+
+.formWrap {
+  max-width: 560px;
+  margin-inline: auto;
+}
+
+.row {
+  margin-bottom: 20px;
+}
+
+.row label {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: var(--steel);
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.row input,
+.row select {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  padding: 13px 14px;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  color: var(--navy);
+  background: #fff;
+}
+
+.submit {
+  width: 100%;
+  display: block;
+  text-align: center;
+  /* Match the wireframe's <a> button: buttons reset line-height to
+     normal, the anchor inherits the body's 1.5 */
+  line-height: 1.5;
+}
+
+.note {
+  font-family: var(--font-sans);
+  font-size: 11.5px;
+  color: var(--steel-light);
+  margin-top: 18px;
+  line-height: 1.6;
+}
