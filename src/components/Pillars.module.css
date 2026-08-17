@@ -53,6 +53,46 @@
   line-height: 1.5;
 }
 
+/* The illustrative bars from the old hero scorecard. Width defaults to the
+   final value so they fail visible; the group's "pending" state pulls them to
+   zero, and the sweep runs when it flips to "in". */
+.barTrack {
+  display: block;
+  height: 4px;
+  margin-top: 16px;
+  border-radius: 3px;
+  background: var(--line);
+  overflow: hidden;
+}
+
+.barFill {
+  display: block;
+  height: 100%;
+  border-radius: 3px;
+  width: var(--bar);
+  background: linear-gradient(90deg, var(--gold-light), var(--gold));
+  transition: width 900ms var(--ease-out-expo) calc(220ms + var(--sr-i, 0) * 80ms);
+}
+
+.grid[data-sr-group="pending"] .barFill {
+  width: 0;
+}
+
+/* The global reduced-motion block can't reach this hashed class */
+@media (prefers-reduced-motion: reduce) {
+  .barFill {
+    width: var(--bar) !important;
+  }
+}
+
+.footnote {
+  margin-top: 26px;
+  font-family: var(--font-sans);
+  font-size: 10.5px;
+  font-style: italic;
+  color: var(--steel-light);
+}
+
 @media (max-width: 900px) {
   .grid {
     grid-template-columns: 1fr;
