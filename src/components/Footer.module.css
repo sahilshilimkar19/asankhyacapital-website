@@ -4,15 +4,21 @@
   padding: 70px 0 30px;
 }
 
+/* Only the brand block and one "Firm" column remain, so the old five-track
+   grid would leave four empty cells: push the two blocks to the outer edges
+   instead and let the link list run in two rows-first columns to stay
+   visually balanced against the brand lockup. */
 .grid {
-  display: grid;
-  grid-template-columns: 1.4fr 1fr 1fr 1fr 1fr;
-  gap: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 44px 30px;
   margin-bottom: 50px;
 }
 
 .brand {
-  max-width: 260px;
+  max-width: 300px;
 }
 
 /* Block-level, as the wireframe's .logo-mark — an inline lockup's line
@@ -39,10 +45,16 @@
   margin-bottom: 18px;
 }
 
+/* Column-first flow keeps the reading order vertical (1,2,3 / 4,5) rather
+   than the row-first order a plain two-track grid would produce. */
 .list {
   list-style: none;
   font-family: var(--font-sans);
   font-size: 12.5px;
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-rows: repeat(3, auto);
+  column-gap: 56px;
 }
 
 .list li {
@@ -74,6 +86,11 @@
 
 @media (max-width: 900px) {
   .grid {
-    grid-template-columns: 1fr;
+    flex-direction: column;
+  }
+
+  .list {
+    grid-auto-flow: row;
+    grid-template-rows: none;
   }
 }
