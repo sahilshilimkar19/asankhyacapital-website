@@ -2,7 +2,23 @@ import { ScrollReveal } from './ScrollReveal'
 import { srItem } from '../hooks/useInView'
 import s from './TeamGrid.module.css'
 
-const ROLES = [
+interface Member {
+  /** Designation — the one field that is settled for every seat. */
+  title: string
+  /** Placeholder shown in the portrait frame until `photo` is supplied. */
+  initials: string
+  blurb: string
+  /**
+   * From the team deck. Add `name` and `photo` together per seat: with a name
+   * the card leads on it and demotes the designation to the gold caption;
+   * without one it keeps today's "[Name to be added]" placeholder.
+   */
+  name?: string
+  /** Portrait in /public/team, e.g. '/team/asha-rao.jpg'. See README → "Team photographs". */
+  photo?: string
+}
+
+const MEMBERS: readonly Member[] = [
   {
     initials: 'CEO',
     title: 'Chief Executive Officer',
@@ -39,21 +55,31 @@ const ROLES = [
     blurb:
       'Sole accountable owner of every public-facing document and every regulatory filing — the one veto-holding seat on the Investment Committee for governance matters.',
   },
-] as const
+]
 
 export function TeamGrid() {
   return (
     <section className={s.teamSection} aria-label="Leadership roles">
       <ScrollReveal group className={`container ${s.grid}`}>
-        {ROLES.map((r, i) => (
-          <article key={r.initials} className={s.card} {...srItem(i)}>
-            <div className={s.avatar} aria-hidden="true">
-              {r.initials}
+        {MEMBERS.map((m, i) => (
+          <article key={m.title} className={s.card} {...srItem(i)}>
+            <div className={`${s.avatar} ${m.photo ? s.avatarPhoto : ''}`}>
+              {m.photo ? (
+                <img
+                  className={s.photo}
+                  src={m.photo}
+                  alt={m.name ? `${m.name}, ${m.title}` : m.title}
+                  loading="lazy"
+                  decoding="async"
+                />
+              ) : (
+                <span aria-hidden="true">{m.initials}</span>
+              )}
             </div>
             <div className={s.info}>
-              <h3 className={s.roleTitle}>{r.title}</h3>
-              <p className={s.role}>[Name to be added]</p>
-              <p className={s.blurb}>{r.blurb}</p>
+              <h3 className={s.roleTitle}>{m.name ?? m.title}</h3>
+              <p className={s.role}>{m.name ? m.title : '[Name to be added]'}</p>
+              <p className={s.blurb}>{m.blurb}</p>
             </div>
           </article>
         ))}

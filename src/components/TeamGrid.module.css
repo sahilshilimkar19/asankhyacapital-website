@@ -2,9 +2,13 @@
   padding: 88px 0;
 }
 
+/* start, not stretch: while the roster is part-photographed the two frame
+   heights coexist, and stretching would open a white void under the shorter
+   cards instead of just letting them end where their copy ends. */
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  align-items: start;
   gap: 26px;
 }
 
@@ -26,6 +30,21 @@
   font-family: var(--font-serif);
   font-size: 26px;
   font-weight: 700;
+}
+
+/* Real portraits get a proper 4:5 frame; initials-only cards keep the shorter
+   placeholder band so the grid doesn't read as six empty panels. */
+.avatarPhoto {
+  height: auto;
+  aspect-ratio: 4 / 5;
+}
+
+/* Framed slightly high — headshots put the face above centre */
+.photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 22%;
 }
 
 .info {
