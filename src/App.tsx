@@ -5,7 +5,6 @@ import { Philosophy } from './components/Philosophy'
 import { Rivers } from './components/Rivers'
 import { Pillars } from './components/Pillars'
 import { FundTeaser } from './components/FundTeaser'
-import { Insights } from './components/Insights'
 import { TrustStrip } from './components/TrustStrip'
 import { Cta } from './components/Cta'
 import { Footer } from './components/Footer'
@@ -31,7 +30,6 @@ export default function App() {
         <Rivers />
         <Pillars />
         <FundTeaser />
-        <Insights />
         <TrustStrip />
         <Cta />
       </main>
