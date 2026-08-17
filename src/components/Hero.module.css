@@ -1,177 +1,221 @@
+/* Cinematic hero: an ambient clip montage, a scrim that only darkens the half
+   the copy sits on, and a thin stat strip framing the foot of the frame. */
 .hero {
-  padding: 90px 0 70px;
-  background: var(--white);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background: var(--navy);
+  min-height: 660px;
+  min-height: min(calc(100svh - var(--nav-h)), 880px);
 }
 
-.inner {
-  display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
-  gap: 60px;
+/* Also the fallback ground: this gradient shows if the encodes ever fail. */
+.media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background:
+    radial-gradient(1100px 620px at 20% 16%, rgba(156, 122, 60, 0.24), transparent 62%),
+    linear-gradient(165deg, #0d2a4f 0%, var(--navy) 46%, #061729 100%);
+}
+
+/* Stacked and cross-dissolved by the component, which drives opacity and
+   sets transition-duration inline from the shortest clip's length.
+   translateZ promotes each clip to its own compositing layer — without it
+   the players share a layer with the overlay and only repaint when
+   something else on the page invalidates (e.g. the pointer moving). */
+.video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 700ms linear;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  will-change: opacity;
+}
+
+.videoActive {
+  opacity: 1;
+}
+
+/* Heavy where the copy is, near-clear on the right so the skyline reads */
+.scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(
+      95deg,
+      rgba(10, 34, 64, 0.92) 0%,
+      rgba(10, 34, 64, 0.86) 30%,
+      rgba(10, 34, 64, 0.62) 52%,
+      rgba(10, 34, 64, 0.28) 76%,
+      rgba(10, 34, 64, 0.16) 100%
+    ),
+    linear-gradient(to top, rgba(6, 23, 41, 0.62) 0%, rgba(6, 23, 41, 0) 46%);
+}
+
+/* ---- Copy ---- */
+.body {
+  position: relative;
+  z-index: 2;
+  flex: 1;
+  min-height: 0;
+  display: flex;
   align-items: center;
+  padding: 72px 0 40px;
+}
+
+/* Keeps the full .container width so the copy's left edge lines up with the
+   nav lockup; the measure caps live on .title / .lede instead.
+   min-width: 0 — a flex item defaults to min-width: auto and would refuse to
+   shrink below the copy's min-content width on narrow viewports. */
+.copy {
+  flex: 1;
+  min-width: 0;
 }
 
 .title {
-  font-size: 44px;
-  line-height: 1.18;
-  margin: 18px 0 22px;
+  font-size: 46px;
+  line-height: 1.16;
+  margin: 18px 0 24px;
+  max-width: 720px;
+  color: #fff;
+  text-shadow: 0 2px 30px rgba(6, 23, 41, 0.55);
 }
 
 .accent {
   font-style: normal;
-  color: var(--gold);
+  color: var(--gold-light);
 }
 
 .lede {
   font-size: 17px;
-  color: var(--steel);
+  color: var(--dark-body);
   max-width: 520px;
-  margin-bottom: 32px;
+  margin-bottom: 34px;
+  text-shadow: 0 1px 16px rgba(6, 23, 41, 0.6);
 }
 
 .btnRow {
   display: flex;
-  gap: 16px;
+  flex-wrap: wrap;
+  gap: 14px;
 }
 
-.stats {
-  display: flex;
-  gap: 44px;
-  margin-top: 44px;
-  padding-top: 28px;
-  border-top: 1px solid var(--line);
+/* Outline sibling to .btnGold — reads on footage without a second solid slab */
+.btnGhost {
+  display: inline-block;
   font-family: var(--font-sans);
-}
-
-.stat b {
-  display: block;
-  font-family: var(--font-serif);
-  font-size: 22px;
-  color: var(--navy);
-}
-
-.stat span {
-  font-size: 11px;
-  color: var(--steel-light);
+  font-size: 13px;
+  font-weight: 700;
   letter-spacing: 0.5px;
   text-transform: uppercase;
-}
-
-/* ---- Scorecard ---- */
-.card {
-  background: var(--navy);
-  border-radius: 4px;
-  padding: 34px 30px;
-}
-
-.cardLabel {
-  font-family: var(--font-sans);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--gold-light);
-  margin-bottom: 6px;
-}
-
-.cardTitle {
+  padding: 14px 27px;
+  border: 1px solid rgba(255, 255, 255, 0.42);
+  border-radius: 2px;
   color: #fff;
-  font-size: 20px;
-  margin-bottom: 22px;
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease;
 }
 
-.rows {
-  list-style: none;
+.btnGhost:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: #fff;
 }
 
-.row {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  margin-bottom: 16px;
+/* ---- Foot strip ---- */
+/* Gold hairline over a navy wash: dark enough to guarantee the small labels
+   contrast against any frame, sheer enough to keep the footage reading. */
+.baseline {
+  position: relative;
+  z-index: 2;
+  border-top: 1px solid rgba(201, 165, 103, 0.32);
+  background: linear-gradient(to top, rgba(6, 23, 41, 0.88), rgba(6, 23, 41, 0.48));
+  padding: 30px 0 32px;
 }
 
-.num {
-  width: 30px;
-  height: 30px;
-  flex-shrink: 0;
-  border-radius: 50%;
-  background: var(--gold);
-  color: var(--navy);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+/* Three equal tracks spanning the measure — the facts line up with the copy
+   above instead of bunching at the left. */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+/* The gold-rule fact, as FundTeaser draws it */
+.stat {
+  border-left: 2px solid var(--gold);
+  padding-left: 18px;
+  min-width: 0;
+}
+
+.statValue {
   font-family: var(--font-serif);
   font-weight: 700;
-  font-size: 14px;
-}
-
-.rowBody {
-  flex: 1;
-  min-width: 0;
-  display: block;
-}
-
-.rowName {
-  display: block;
-  font-family: var(--font-sans);
-  font-size: 12.5px;
-  font-weight: 700;
+  font-size: 23px;
+  line-height: 1.15;
   color: #fff;
-  margin-bottom: 5px;
 }
 
-.barTrack {
-  display: block;
-  height: 5px;
-  border-radius: 3px;
-  background: var(--card-navy);
-  overflow: hidden;
-}
-
-/* Width defaults to the final value — fails visible if the reveal
-   never fires. The group's "pending" state pulls it to zero, so the
-   sweep runs when the state flips to "in". */
-.barFill {
-  display: block;
-  height: 100%;
-  border-radius: 3px;
-  width: var(--bar);
-  background: linear-gradient(90deg, var(--gold-light), var(--gold));
-  transition: width 900ms var(--ease-out-expo) calc(180ms + var(--sr-i, 0) * 80ms);
-}
-
-.rows[data-sr-group="pending"] .barFill {
-  width: 0;
-}
-
-/* The global reduced-motion block can't reach this hashed class */
-@media (prefers-reduced-motion: reduce) {
-  .barFill {
-    width: var(--bar) !important;
-  }
-}
-
-.footnote {
+.statLabel {
+  margin-top: 5px;
   font-family: var(--font-sans);
   font-size: 10.5px;
-  font-style: italic;
-  color: var(--dark-dim);
-  margin-top: 18px;
+  font-weight: 700;
+  letter-spacing: 1.1px;
+  text-transform: uppercase;
+  color: var(--gold-light);
+}
+
+@media (max-width: 1040px) {
+  .title {
+    font-size: 40px;
+    max-width: 600px;
+  }
 }
 
 @media (max-width: 900px) {
-  .inner {
-    grid-template-columns: 1fr;
+  .hero {
+    min-height: 0;
   }
 
   .title {
-    font-size: 34px;
+    font-size: 33px;
+    max-width: none;
+  }
+
+  .body {
+    padding: 56px 0 36px;
+  }
+
+  /* Stacked copy spans the full width, so the whole frame needs cover */
+  .scrim {
+    background: linear-gradient(175deg, rgba(10, 34, 64, 0.9), rgba(6, 23, 41, 0.86));
+  }
+
+  .baseline {
+    padding: 26px 0 28px;
+  }
+
+  .stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px 26px;
+  }
+
+  .statValue {
+    font-size: 20px;
   }
 }
 
 @media (max-width: 560px) {
   .stats {
-    flex-direction: column;
-    gap: 16px;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 18px;
   }
 }
