@@ -10,7 +10,7 @@ export function ReadNext() {
           See how this becomes a public, testable framework
         </h2>
         <a href="/#pillars" className="btn btnNavy">
-          Explore the SCALE Framework
+          Explore the 6 Pillars Framework
         </a>
       </ScrollReveal>
     </section>
