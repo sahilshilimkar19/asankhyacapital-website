@@ -110,29 +110,29 @@ no backend; swap the submit handlers when a form endpoint exists.
 
 ### Hero video montage
 
-The homepage hero ([src/components/Hero.tsx](src/components/Hero.tsx)) plays a montage:
-one `<video>` per clip, stacked and **cross-dissolved** into each other in rotation.
-Each slot keeps its own clip for the whole session, so nothing re-buffers after the
-first pass.
+The homepage hero ([src/components/Hero.tsx](src/components/Hero.tsx)) plays a montage
+on **two stacked `<video>` players that cross-dissolve into each other** — there is
+never a cut. Each player keeps its own source for the whole session, so nothing
+re-buffers after the first pass.
 
 Clips live in `public/media/` and are listed in one place:
 
 ```ts
-const CLIPS = ['/media/mumbai-hero.mp4', '/media/NY-hero.mp4'] as const
+const CLIPS: readonly string[] = ['/media/mumbai-hero.mp4']
 ```
 
-Add, remove or reorder entries there — the dissolve machinery adapts. Two knobs sit
-beside it:
+Both players are always mounted. With **one** clip listed they hold the same file and
+dissolve it into itself, so a single-clip montage still never hard-cuts; with two or
+more, the first two alternate. Two knobs sit beside the list:
 
 | Constant | Purpose |
 | --- | --- |
-| `PLAYBACK_RATE` | `0.5`. The supplied clips are only 1.3–2.3 s; at full speed the montage stutters, at half speed it drifts. Raise toward `1` as clips get longer. |
-| `MAX_FADE_MS` | Dissolve ceiling. The value actually used is `min(MAX_FADE_MS, shortestClip × 0.3)`, so a very short clip is never mostly-dissolve. |
+| `PLAYBACK_RATE` | `0.5`. The Mumbai clip is only 2.3 s; at full speed it stutters, at half speed it drifts. Raise toward `1` as clips get longer. |
+| `MAX_FADE_MS` | Dissolve ceiling. The value actually used is `min(MAX_FADE_MS, clipLength × 0.3)`, so a very short clip is never mostly-dissolve. |
 
-**Clip specs.** ~8–12 s each, 1920×1080, H.264, **no audio track**, ≤4 MB. The current
-clips are 1280×720 and very short — they work, but longer 1080p footage would let
-`PLAYBACK_RATE` go back to `1` and remove the need for slow motion entirely. To
-re-encode a master:
+**Clip specs.** ~8–12 s, 1920×1080, H.264, **no audio track**, ≤4 MB. The current clip
+is 1280×720 and 2.3 s — it works, but longer 1080p footage would let `PLAYBACK_RATE`
+go back to `1` and remove the need for slow motion entirely. To re-encode a master:
 
 ```powershell
 ffmpeg -i master.mov -an -t 10 -vf "scale=1920:-2" -c:v libx264 -crf 30 -preset slow -movflags +faststart public/media/mumbai-hero.mp4
@@ -141,10 +141,9 @@ ffmpeg -i master.mov -an -t 10 -vf "scale=1920:-2" -c:v libx264 -crf 30 -preset 
 `-an` strips audio deliberately: the montage is decorative and autoplays muted, so a
 silent file is smaller and avoids autoplay blocking.
 
-**Degradation.** A clip that 404s is dropped from the rotation; with one clip left the
-survivor hard-loops; with none the hero falls back to the navy gradient painted on
-`.media`. Under `prefers-reduced-motion` nothing autoplays — the first clip renders as
-a still frame, and the pause/play control in the foot strip can start it on request.
+**Degradation.** A source that 404s is dropped; once every player is dead the hero
+falls back to the navy gradient painted on `.media`. Under `prefers-reduced-motion`
+nothing autoplays and the first frame renders as a still.
 
 **Compositing note.** `.video` carries `transform: translateZ(0)`, and the hero uses no
 `backdrop-filter`. Both matter: sharing a compositing layer with a blurred overlay made
@@ -188,12 +187,12 @@ Push to `main` — Vercel builds and deploys automatically. Verify after deploy:
 ## Roadmap
 - [x] Replace the coming-soon page with the full homepage
 - [x] Build the standalone pages (About, Philosophy, Bharat Fund, Insights, Team, Contact)
-- [x] Hero video montage (Mumbai + NY clips, cross-dissolved)
+- [x] Hero video montage (Mumbai clip, dissolved into itself)
+- [x] Drop in the team portraits (see "Media assets")
+- [x] Settle the naming: "SCALE framework" is retired sitewide in favour of
+  "6 Pillars framework"
 - [ ] Longer 1080p hero clips, so `PLAYBACK_RATE` can return to `1`
-- [ ] Drop in the team portraits (see "Media assets")
-- [ ] SCALE Framework page (the footer link currently falls back to the homepage
-  pillars section)
-- [ ] Decide the naming: the hero now says "Sangam philosophy and six pillars
-  framework" while interior pages still say "SCALE framework"
+- [ ] 6 Pillars Framework page (the footer link currently falls back to the
+  homepage pillars section)
 - [ ] Wire the contact + subscribe forms to a real endpoint (currently mailto drafts)
 - [ ] Export `og-image.svg` → PNG for broadest social-preview compatibility
