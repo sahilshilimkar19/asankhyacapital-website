@@ -16,7 +16,7 @@ export default function ResearchApp() {
           crumb="Research & Insights"
           eyebrow="Research & Insights"
           title="Thought Leadership"
-          lede="Our published research, market commentary, and the thinking behind the SCALE framework — updated on the cadence set out in our brand visibility calendar, not a reactive news cycle."
+          lede="Our published research, market commentary, and the thinking behind the 6 Pillars framework — updated on the cadence set out in our brand visibility calendar, not a reactive news cycle."
         />
         <ResearchGrid />
         <SubscribeBand />

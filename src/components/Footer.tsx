@@ -2,11 +2,11 @@ import { Logo } from './Logo'
 import s from './Footer.module.css'
 
 // One centered row: every nav destination plus the footer-only extras
-// (the SCALE homepage section and the Contact page).
+// (the 6 Pillars homepage section and the Contact page).
 const LINKS: readonly { label: string; href: string }[] = [
   { label: 'About Us', href: '/about' },
   { label: 'Investment Philosophy', href: '/philosophy' },
-  { label: 'SCALE Framework', href: '/#pillars' },
+  { label: '6 Pillars Framework', href: '/#pillars' },
   { label: 'Bharat Fund', href: '/bharat-fund' },
   { label: 'Team', href: '/team' },
   { label: 'Contact', href: '/contact' },

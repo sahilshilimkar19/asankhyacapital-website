@@ -4,22 +4,29 @@ import { usePrefersReducedMotion } from '../hooks/usePrefersReducedMotion'
 import s from './Hero.module.css'
 
 /**
- * The hero plays an ambient montage: two clips on two stacked <video>
- * elements that dissolve into one another, then back again. Each slot keeps
- * its own clip for the whole session, so nothing ever re-buffers.
+ * The hero plays an ambient montage on two stacked <video> elements that
+ * dissolve into one another. Each player keeps its own source for the whole
+ * session, so nothing ever re-buffers.
  *
- * Add or reorder clips here — one entry per slot. See README → "Media assets".
+ * Add or reorder clips here. See README → "Media assets".
  */
-const CLIPS = ['/media/mumbai-hero.mp4', '/media/NY-hero.mp4'] as const
+const CLIPS: readonly string[] = ['/media/mumbai-hero.mp4']
 
 /**
- * The supplied clips are only ~1–2 s long. At full speed the montage reads as
- * a stutter; at half speed the same footage drifts, and each dissolve cycle
+ * Two players are always mounted. Given a single clip both hold the same file
+ * and dissolve it into itself, so a one-clip montage still never hard-cuts —
+ * which is the whole point of the montage over a plain loop.
+ */
+const SLOTS: readonly string[] = CLIPS.length >= 2 ? CLIPS.slice(0, 2) : [CLIPS[0], CLIPS[0]]
+
+/**
+ * The Mumbai clip is only ~2.3 s. At full speed the montage reads as a
+ * stutter; at half speed the same footage drifts, and each dissolve cycle
  * lasts long enough to feel deliberate.
  */
 const PLAYBACK_RATE = 0.5
 
-/** Dissolve ceiling. The real value is derived from the shortest clip below. */
+/** Dissolve ceiling. The real value is derived from the clip length below. */
 const MAX_FADE_MS = 900
 
 /** Value first, label under — the gold-rule fact idiom used by FundTeaser. */
@@ -40,7 +47,7 @@ export function Hero() {
   const swapping = useRef(false)
 
   const liveSlots = dead.filter((d) => !d).length
-  const canCrossfade = liveSlots === CLIPS.length && !reduced
+  const canCrossfade = liveSlots === SLOTS.length && !reduced
 
   /* Derive the dissolve from the shortest clip so a 1.3 s clip is never
      mostly-dissolve. Runs on each slot's metadata; harmless when repeated. */
@@ -48,7 +55,7 @@ export function Hero() {
     const durations = slots.current
       .map((v) => v?.duration)
       .filter((d): d is number => typeof d === 'number' && Number.isFinite(d) && d > 0)
-    if (durations.length < CLIPS.length) return
+    if (durations.length < SLOTS.length) return
     const shortestMs = (Math.min(...durations) / PLAYBACK_RATE) * 1000
     setFadeMs(Math.round(Math.min(MAX_FADE_MS, shortestMs * 0.3)))
   }, [])
@@ -90,10 +97,10 @@ export function Hero() {
   return (
     <section className={`onDark ${s.hero}`} aria-labelledby="hero-title">
       <div className={s.media} aria-hidden="true">
-        {CLIPS.map((src, i) =>
+        {SLOTS.map((src, i) =>
           dead[i] ? null : (
             <video
-              key={src}
+              key={i}
               ref={(el) => {
                 slots.current[i] = el
               }}

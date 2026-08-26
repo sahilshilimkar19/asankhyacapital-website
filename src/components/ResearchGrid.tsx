@@ -38,7 +38,7 @@ const ARTICLES = [
   },
   {
     tag: 'Firm News',
-    title: 'Building the SCALE Framework: Our Design Process',
+    title: 'Building the 6 Pillars Framework: Our Design Process',
     blurb: 'How our six research pillars are presented as one public framework.',
     meta: '5 MIN READ  ·  NOV 2025',
   },

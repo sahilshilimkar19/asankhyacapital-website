@@ -5,7 +5,7 @@ import s from './Commitment.module.css'
 const CARDS = [
   {
     title: 'Documented process',
-    body: 'Every position is scored against the same SCALE framework before it enters the portfolio — see the full methodology.',
+    body: 'Every position is scored against the same 6 Pillars framework before it enters the portfolio — see the full methodology.',
   },
   {
     title: 'Named accountability',

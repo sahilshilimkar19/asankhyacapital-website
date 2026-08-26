@@ -24,7 +24,7 @@ export function FundStructure() {
           <h3>Who this is for</h3>
           <p className={s.spaced}>
             Investors who can commit a minimum of ₹1 crore, hold a multi-year horizon, and
-            want direct access to the same disciplined, SCALE-tested research process
+            want direct access to the same disciplined, 6 Pillars-tested research process
             described throughout this site.
           </p>
           <h3>What this is not</h3>
