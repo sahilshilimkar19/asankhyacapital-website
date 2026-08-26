@@ -28,6 +28,33 @@
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="/favicon.svg" />
 
+    <!-- Structured data: ties the "Asankhya Capital" brand to this domain for Google -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://asankhyacapital.com/#organization",
+            "name": "Asankhya Capital",
+            "legalName": "Asankhya Capital Management Private Limited",
+            "url": "https://asankhyacapital.com/",
+            "logo": "https://asankhyacapital.com/favicon.svg",
+            "image": "https://asankhyacapital.com/og-image.svg",
+            "email": "info@asankhyacapital.com",
+            "description": "Asankhya Capital is a proposed SEBI Category III Alternative Investment Fund investing in enduring Indian businesses at the intersection of structural growth and exceptional execution."
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://asankhyacapital.com/#website",
+            "name": "Asankhya Capital",
+            "url": "https://asankhyacapital.com/",
+            "publisher": { "@id": "https://asankhyacapital.com/#organization" }
+          }
+        ]
+      }
+    </script>
+
   </head>
   <body style="background-color: #ffffff">
     <div id="root"></div>
