@@ -45,10 +45,10 @@ const MEMBERS: readonly Member[] = [
       'IIM Ahmedabad alumnus with deep experience in investments, business strategy, and growth. Has evaluated IPOs, listed equities, and AIF opportunities, with experience across 100+ investment opportunities.',
   },
   {
-    name: 'Madan KS, XIMB, MIT',
+    name: 'Madan Kumar Singh, XIMB, MIT',
     title: 'Non-Executive Director',
     initials: 'MKS',
-    photo: '/team/madan-ks.jpg',
+    photo: '/team/madan-kumar-singh.jpg',
     blurb:
       "Built and executed multi-million dollar business for MNCs. Has been investing in India and US market for 20+ years. He developed a framework for identifying quality businesses supporting India's structural growth. In his international role, he has also analyzed emerging technologies.",
   },
