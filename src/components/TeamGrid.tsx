@@ -18,7 +18,7 @@ interface Member {
   photo?: string
 }
 
-// Deck order: the three executive founders, then the board seats.
+// Deck order: the three executive founders, then the board seat.
 const MEMBERS: readonly Member[] = [
   {
     name: 'Akhilesh Pathak, NIT Durgapur, IIMA',
@@ -51,14 +51,6 @@ const MEMBERS: readonly Member[] = [
     photo: '/team/madan-ks.jpg',
     blurb:
       "Built and executed multi-million dollar business for MNCs. Has been investing in India and US market for 20+ years. He developed a framework for identifying quality businesses supporting India's structural growth. In his international role, he has also analyzed emerging technologies.",
-  },
-  {
-    name: 'Siddhant Agarwala, BITS Pilani',
-    title: 'Director & Chief Compliance Officer',
-    initials: 'SA',
-    photo: '/team/siddhant-agarwala.jpg',
-    blurb:
-      "Over a decade in equity research and portfolio strategy. Focuses on identifying quality businesses using the fund's core framework. Previously held roles across consulting and public markets.",
   },
 ]
 
