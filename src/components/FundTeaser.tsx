@@ -21,8 +21,14 @@ export function FundTeaser() {
           <p className={s.body}>
             A proposed SEBI-registered Category III Alternative Investment Fund, built to
             compound capital across listed equities, pre-IPO and anchor allotments, and
-            structured instruments — for investors who think in decades.
+            structured instruments — for investors guided by one timeless rule:
           </p>
+          <figure className={s.rule}>
+            <blockquote>
+              &ldquo;Be fearful when others are greedy and greedy when others are fearful.&rdquo;
+            </blockquote>
+            <figcaption>Warren Buffett</figcaption>
+          </figure>
           <a href="/bharat-fund" className="btn btnGold">
             View Fund Details
           </a>

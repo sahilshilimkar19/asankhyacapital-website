@@ -22,6 +22,27 @@
   margin-bottom: 26px;
 }
 
+.rule {
+  margin: 0 0 26px;
+}
+
+.rule blockquote {
+  margin: 0;
+  font-size: 19px;
+  font-style: italic;
+  line-height: 1.5;
+  color: #fff;
+}
+
+.rule figcaption {
+  margin-top: 10px;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
 .facts {
   display: grid;
   grid-template-columns: 1fr 1fr;
