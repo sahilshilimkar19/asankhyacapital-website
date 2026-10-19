@@ -18,7 +18,7 @@ interface Member {
   photo?: string
 }
 
-// Deck order: the three executive founders, then the board seat.
+// Deck order: the executive founders, then the board seat.
 const MEMBERS: readonly Member[] = [
   {
     name: 'Akhilesh Pathak, NIT Durgapur, IIMA',
@@ -35,14 +35,6 @@ const MEMBERS: readonly Member[] = [
     photo: '/team/himanshu-shah.jpg',
     blurb:
       '10+ years in research, investment strategy and portfolio management; has managed personal, family and family-office portfolios across equity research, asset allocation and risk management.',
-  },
-  {
-    name: 'Kalpesh Agarrwal, IIM A',
-    title: 'Co-founder & Chief Growth Officer',
-    initials: 'KA',
-    photo: '/team/kalpesh-agarrwal.jpg',
-    blurb:
-      'IIM Ahmedabad alumnus with deep experience in investments, business strategy, and growth. Has evaluated IPOs, listed equities, and AIF opportunities, with experience across 100+ investment opportunities.',
   },
   {
     name: 'Madan Kumar Singh, XIMB, MIT',
