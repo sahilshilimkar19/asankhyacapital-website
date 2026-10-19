@@ -33,7 +33,6 @@ const MAX_FADE_MS = 900
 const STATS = [
   { value: 'In Process', label: 'SEBI Registration' },
   { value: '50+ Years', label: 'Combined Leadership Experience' },
-  { value: '₹1 Cr', label: 'Minimum Contribution' },
 ] as const
 
 export function Hero() {
@@ -153,7 +152,7 @@ export function Hero() {
       </div>
 
       {/* A thin strip along the foot: it frames the footage rather than
-          covering it, and the three facts span the full measure. */}
+          covering it, and the facts span the full measure. */}
       <Reveal i={4} className={s.baseline}>
         <dl className={`container ${s.stats}`}>
           {STATS.map((st) => (

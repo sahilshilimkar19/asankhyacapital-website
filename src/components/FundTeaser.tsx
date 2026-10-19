@@ -4,7 +4,6 @@ import s from './FundTeaser.module.css'
 
 const FACTS = [
   { value: 'Category III', label: 'SEBI AIF Classification' },
-  { value: '₹1 Cr', label: 'Minimum Contribution' },
   { value: 'Monthly', label: 'NAV Reporting Cadence' },
   { value: 'Multi-Asset', label: 'Listed + Pre-IPO Access' },
 ] as const

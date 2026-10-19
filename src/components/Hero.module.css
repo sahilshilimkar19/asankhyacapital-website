@@ -140,11 +140,11 @@
   padding: 30px 0 32px;
 }
 
-/* Three equal tracks spanning the measure — the facts line up with the copy
+/* Two equal tracks spanning the measure — the facts line up with the copy
    above instead of bunching at the left. */
 .stats {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 32px;
 }
 

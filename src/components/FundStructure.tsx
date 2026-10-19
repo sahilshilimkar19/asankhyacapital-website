@@ -5,7 +5,6 @@ import s from './FundStructure.module.css'
 
 const FACTS = [
   { label: 'Classification', value: 'Category III AIF (proposed)' },
-  { label: 'Minimum contribution', value: '₹1 Crore' },
   { label: 'Capital contribution', value: '100% upfront' },
   { label: 'NAV frequency', value: 'Monthly' },
   { label: 'Mandate', value: 'Sector-agnostic, multi-asset' },
@@ -23,9 +22,8 @@ export function FundStructure() {
         <div className={s.card} {...srItem(1)}>
           <h3>Who this is for</h3>
           <p className={s.spaced}>
-            Investors who can commit a minimum of ₹1 crore, hold a multi-year horizon, and
-            want direct access to the same disciplined, 6 Pillars-tested research process
-            described throughout this site.
+            Investors who can hold a multi-year horizon and want direct access to the same
+            disciplined, 6 Pillars-tested research process described throughout this site.
           </p>
           <h3>What this is not</h3>
           <p>
