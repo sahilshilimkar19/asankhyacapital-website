@@ -5,6 +5,7 @@ import s from './AboutStory.module.css'
 
 const FACTS = [
   { label: 'Entity', value: 'Asankhya Capital Management Pvt Ltd' },
+  { label: 'CIN', value: 'U66300GJ2026PTC178345', breakAnywhere: true },
   { label: 'Proposed fund', value: 'Category III AIF (Bharat Growth Fund)' },
   { label: 'SEBI Registration', value: '[In Process]' },
   { label: 'Headquarters', value: 'Gujarat, India' },

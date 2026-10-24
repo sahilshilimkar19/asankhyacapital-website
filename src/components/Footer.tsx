@@ -42,7 +42,7 @@ export function Footer() {
             registered; all terms are indicative pending the Private Placement Memorandum.
           </p>
           <p>
-            {'SEBI Registration: [In Process]  ·  CIN: [To be added]  ·  © Asankhya Capital Management Private Limited'}
+            {'SEBI Registration: [In Process]  ·  CIN: U66300GJ2026PTC178345  ·  © Asankhya Capital Management Private Limited'}
           </p>
         </div>
       </div>

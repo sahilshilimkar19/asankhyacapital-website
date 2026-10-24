@@ -23,3 +23,10 @@
   color: var(--navy);
   font-weight: 600;
 }
+
+/* For long unbroken values such as the CIN. anywhere, not break-word: it
+   also lowers the min-content width, so the value wraps instead of widening
+   the table. Opt-in per row, so ordinary words keep wrapping whole. */
+.table td.breakAnywhere {
+  overflow-wrap: anywhere;
+}
