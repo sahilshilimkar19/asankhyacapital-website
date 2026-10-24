@@ -137,7 +137,7 @@ export function Hero() {
           </Reveal>
           <Reveal i={2} as="p" className={s.lede}>
             Asankhya Capital is a proposed SEBI-registered Category III AIF built for
-            investors who measure returns in decades, not quarters — sector-agnostic,
+            investors who measure returns in years, not quarters — sector-agnostic,
             research-led, and disciplined by our Sangam philosophy and six pillars framework.
           </Reveal>
           <Reveal i={3} className={s.btnRow}>
