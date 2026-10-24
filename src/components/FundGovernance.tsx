@@ -3,8 +3,8 @@ import { srItem } from '../hooks/useInView'
 import s from './FundGovernance.module.css'
 
 const PARTIES = [
-  { label: 'Sponsor', value: 'Asankhya Capital Mgmt.' },
-  { label: 'Trustee', value: '[To be appointed]' },
+  { label: 'Sponsor', value: 'Asankhya Capital Management Private Limited' },
+  { label: 'Trustee', value: 'Axis Trustee Services Limited' },
   { label: 'Custodian', value: '[To be appointed]' },
   { label: 'RTA', value: '[To be appointed]' },
 ] as const
