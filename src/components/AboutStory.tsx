@@ -5,7 +5,7 @@ import s from './AboutStory.module.css'
 
 const FACTS = [
   { label: 'Entity', value: 'Asankhya Capital Management Pvt Ltd' },
-  { label: 'Proposed fund', value: 'Category III AIF (Bharat Fund)' },
+  { label: 'Proposed fund', value: 'Category III AIF (Bharat Growth Fund)' },
   { label: 'SEBI Registration', value: '[In Process]' },
   { label: 'Headquarters', value: 'Gujarat, India' },
   { label: 'Founded', value: '2026' },
@@ -21,7 +21,7 @@ export function AboutStory() {
             A platform built on prior institutional experience
           </h2>
           <p className={s.body}>
-            We are building Asankhya Capital — Bharat Fund as a proposed SEBI-registered
+            We are building Asankhya Capital — Bharat Growth Fund as a proposed SEBI-registered
             Category III Alternative Investment Fund, with a founding team that has spent
             careers in institutional research, portfolio management and corporate finance
             before bringing that experience to a single platform. Our thesis — that the best

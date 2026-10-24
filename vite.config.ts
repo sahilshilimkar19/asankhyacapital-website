@@ -12,7 +12,7 @@ export default defineConfig({
       input: {
         main: fileURLToPath(new URL('./index.html', import.meta.url)),
         about: fileURLToPath(new URL('./about.html', import.meta.url)),
-        'bharat-fund': fileURLToPath(new URL('./bharat-fund.html', import.meta.url)),
+        'bharat-growth-fund': fileURLToPath(new URL('./bharat-growth-fund.html', import.meta.url)),
         contact: fileURLToPath(new URL('./contact.html', import.meta.url)),
         philosophy: fileURLToPath(new URL('./philosophy.html', import.meta.url)),
         research: fileURLToPath(new URL('./research.html', import.meta.url)),

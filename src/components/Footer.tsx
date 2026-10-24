@@ -7,7 +7,7 @@ const LINKS: readonly { label: string; href: string }[] = [
   { label: 'About Us', href: '/about' },
   { label: 'Investment Philosophy', href: '/philosophy' },
   { label: '6 Pillars Framework', href: '/#pillars' },
-  { label: 'Bharat Fund', href: '/bharat-fund' },
+  { label: 'Bharat Growth Fund', href: '/bharat-growth-fund' },
   { label: 'Team', href: '/team' },
   { label: 'Contact', href: '/contact' },
 ]

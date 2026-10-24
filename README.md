@@ -1,7 +1,7 @@
 # Asankhya Capital — Website
 
 The official website for **Asankhya Capital** — a seven-page marketing site: homepage,
-About, Investment Philosophy, Bharat Fund, Research & Insights, Team, and Contact.
+About, Investment Philosophy, Bharat Growth Fund, Research & Insights, Team, and Contact.
 Every page is an exact implementation of the approved wireframe set.
 
 **Live:** https://asankhyacapital.com
@@ -56,7 +56,7 @@ Clean URLs work in dev and preview out of the box (Vite resolves `/about` →
 ```
 .
 ├── index.html                  # homepage entry (per-page SEO/OG meta lives in each entry)
-├── about.html  philosophy.html  bharat-fund.html
+├── about.html  philosophy.html  bharat-growth-fund.html
 ├── research.html  team.html  contact.html      # one Vite MPA entry per page
 ├── vercel.json                 # clean URLs, trailing-slash policy, asset caching
 ├── public/                     # copied to dist/ verbatim
@@ -186,7 +186,7 @@ Push to `main` — Vercel builds and deploys automatically. Verify after deploy:
 
 ## Roadmap
 - [x] Replace the coming-soon page with the full homepage
-- [x] Build the standalone pages (About, Philosophy, Bharat Fund, Insights, Team, Contact)
+- [x] Build the standalone pages (About, Philosophy, Bharat Growth Fund, Insights, Team, Contact)
 - [x] Hero video montage (Mumbai clip, dissolved into itself)
 - [x] Drop in the team portraits (see "Media assets")
 - [x] Settle the naming: "SCALE framework" is retired sitewide in favour of

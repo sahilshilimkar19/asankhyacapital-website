@@ -7,7 +7,7 @@ import s from './Nav.module.css'
 const NAV_LINKS = [
   { label: 'About', href: '/about' },
   { label: 'Philosophy', href: '/philosophy' },
-  { label: 'Bharat Fund', href: '/bharat-fund' },
+  { label: 'Bharat Growth Fund', href: '/bharat-growth-fund' },
   { label: 'Team', href: '/team' },
 ] as const
 

@@ -1,6 +1,10 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
+  "redirects": [
+    { "source": "/bharat-fund", "destination": "/bharat-growth-fund", "permanent": true },
+    { "source": "/bharat-fund.html", "destination": "/bharat-growth-fund", "permanent": true }
+  ],
   "headers": [
     {
       "source": "/assets/(.*)",

@@ -15,7 +15,7 @@ export function FundTeaser() {
         <ScrollReveal>
           <p className="eyebrow">Our Flagship Vehicle</p>
           <h2 id="fund-title" className={s.title}>
-            Asankhya Capital — Bharat Fund
+            Asankhya Capital — Bharat Growth Fund
           </h2>
           <p className={s.body}>
             A proposed SEBI-registered Category III Alternative Investment Fund, built to
@@ -28,7 +28,7 @@ export function FundTeaser() {
             </blockquote>
             <figcaption>Warren Buffett</figcaption>
           </figure>
-          <a href="/bharat-fund" className="btn btnGold">
+          <a href="/bharat-growth-fund" className="btn btnGold">
             View Fund Details
           </a>
         </ScrollReveal>

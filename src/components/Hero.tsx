@@ -144,7 +144,7 @@ export function Hero() {
             <a href="/philosophy" className="btn btnGold">
               Read Our Philosophy
             </a>
-            <a href="/bharat-fund" className={s.btnGhost}>
+            <a href="/bharat-growth-fund" className={s.btnGhost}>
               Explore the Fund
             </a>
           </Reveal>
