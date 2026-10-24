@@ -1,27 +1,100 @@
-.band {
-  background: var(--navy);
-  padding: 88px 0;
+/* Continues the white confluence section above — one chapter, two parts,
+   as the deck's two Section 03 slides — so only the bottom is padded */
+.rivers {
+  padding: 0 0 88px;
 }
 
-.cols {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 26px;
+.head {
+  text-align: center;
+  margin-bottom: 50px;
 }
 
 .title {
-  font-size: 24px;
-  margin: 12px 0 14px;
+  font-size: 30px;
+  margin: 10px 0 12px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 34px 30px;
+}
+
+.dark {
+  background: var(--navy);
+  border-color: var(--navy);
+}
+
+.dark:nth-child(3) {
+  background: var(--navy-2);
+  border-color: var(--navy-2);
+}
+
+.cardTitle {
+  font-size: 22px;
+  margin: 10px 0 10px;
+}
+
+.dark .cardTitle {
   color: #fff;
 }
 
-/* Serif body, as the wireframe's .navy-section p — no font override */
-.body {
+.lede {
+  font-style: italic;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--steel);
+}
+
+.dark .lede {
+  color: var(--gold-light);
+}
+
+.tests {
+  margin-top: 22px;
+  padding-top: 8px;
+  border-top: 1px solid var(--line);
+}
+
+.dark .tests {
+  border-top-color: rgba(255, 255, 255, 0.14);
+}
+
+.test {
+  padding-top: 14px;
+}
+
+.test dt {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 3px;
+}
+
+.dark .test dt {
+  color: #fff;
+}
+
+.test dd {
+  font-family: var(--font-sans);
+  font-size: 12.5px;
+  line-height: 1.6;
+  color: var(--steel);
+}
+
+.dark .test dd {
   color: var(--dark-body);
 }
 
 @media (max-width: 900px) {
-  .cols {
+  .grid {
     grid-template-columns: 1fr;
   }
 }

@@ -1,5 +1,6 @@
 import { Nav } from './components/Nav'
 import { PageHero } from './components/PageHero'
+import { SangamConfluence } from './components/SangamConfluence'
 import { SangamRivers } from './components/SangamRivers'
 import { PhilosophyPillars } from './components/PhilosophyPillars'
 import { ReadNext } from './components/ReadNext'
@@ -21,6 +22,7 @@ export default function PhilosophyApp() {
             '"We invest in businesses with enduring competitive advantages operating at the intersection of India\'s structural growth and exceptional execution." Three rivers meeting at a confluence — Sangam — is the oldest metaphor in Indian geography for exactly this idea, and it is the one we have built our entire research process around.'
           }
         />
+        <SangamConfluence />
         <SangamRivers />
         <PhilosophyPillars />
         <ReadNext />
