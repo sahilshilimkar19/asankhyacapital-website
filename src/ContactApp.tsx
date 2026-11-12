@@ -3,6 +3,7 @@ import { PageHero } from './components/PageHero'
 import { ContactForm } from './components/ContactForm'
 import { ContactStrip } from './components/ContactStrip'
 import { Footer } from './components/Footer'
+import { WhatsAppButton } from './components/WhatsAppButton'
 
 export default function ContactApp() {
   return (
@@ -24,6 +25,7 @@ export default function ContactApp() {
         <ContactStrip />
       </main>
       <Footer />
+      <WhatsAppButton />
     </>
   )
 }

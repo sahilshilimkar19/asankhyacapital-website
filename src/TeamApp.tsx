@@ -2,6 +2,7 @@ import { Nav } from './components/Nav'
 import { PageHero } from './components/PageHero'
 import { TeamGrid } from './components/TeamGrid'
 import { Footer } from './components/Footer'
+import { WhatsAppButton } from './components/WhatsAppButton'
 
 export default function TeamApp() {
   return (
@@ -20,6 +21,7 @@ export default function TeamApp() {
         <TeamGrid />
       </main>
       <Footer />
+      <WhatsAppButton />
     </>
   )
 }

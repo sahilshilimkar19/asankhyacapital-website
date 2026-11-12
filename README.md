@@ -96,7 +96,10 @@ Clean URLs work in dev and preview out of the box (Vite resolves `/about` →
 - **SEO / social meta** — per page, in its root entry HTML (e.g. [about.html](about.html))
 - **Adding a page** — new `<page>.html` + `src/<page>.tsx` entry + `<Page>App.tsx`,
   register the entry in [vite.config.ts](vite.config.ts), add it to the sitemap,
-  and link it from Nav/Footer
+  link it from Nav/Footer, and render `<WhatsAppButton />` after `<Footer />`
+- **Phone / WhatsApp** — the number and both links live in [src/siteContact.ts](src/siteContact.ts);
+  the floating bottom-right chat button is [WhatsAppButton](src/components/WhatsAppButton.tsx), a
+  plain `wa.me` link (no widget script)
 - **Motion** — hero/pagehero entrances use `Reveal`; below-fold sections use
   `ScrollReveal` + the `[data-sr]` transition system in global.css
 

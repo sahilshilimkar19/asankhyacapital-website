@@ -4,6 +4,7 @@ import { AboutStory } from './components/AboutStory'
 import { Commitment } from './components/Commitment'
 import { MeetTeam } from './components/MeetTeam'
 import { Footer } from './components/Footer'
+import { WhatsAppButton } from './components/WhatsAppButton'
 
 export default function AboutApp() {
   return (
@@ -24,6 +25,7 @@ export default function AboutApp() {
         <MeetTeam />
       </main>
       <Footer />
+      <WhatsAppButton />
     </>
   )
 }

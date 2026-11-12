@@ -3,6 +3,7 @@ import { PageHero } from './components/PageHero'
 import { ResearchGrid } from './components/ResearchGrid'
 import { SubscribeBand } from './components/SubscribeBand'
 import { Footer } from './components/Footer'
+import { WhatsAppButton } from './components/WhatsAppButton'
 
 export default function ResearchApp() {
   return (
@@ -22,6 +23,7 @@ export default function ResearchApp() {
         <SubscribeBand />
       </main>
       <Footer />
+      <WhatsAppButton />
     </>
   )
 }

@@ -1,0 +1,33 @@
+/* Above the sticky nav (40), below the skip link (60) */
+.fab {
+  position: fixed;
+  right: 32px;
+  bottom: 32px;
+  z-index: 50;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #25d366; /* WhatsApp brand green */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease;
+}
+
+.fab:hover {
+  transform: scale(1.1);
+}
+
+/* Gold reads on both the white sections and the navy footer it floats over */
+.fab:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+}
+
+@media (max-width: 900px) {
+  .fab {
+    right: 20px;
+    bottom: 20px;
+  }
+}

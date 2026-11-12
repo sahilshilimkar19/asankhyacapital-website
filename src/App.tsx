@@ -8,6 +8,7 @@ import { FundTeaser } from './components/FundTeaser'
 import { TrustStrip } from './components/TrustStrip'
 import { Cta } from './components/Cta'
 import { Footer } from './components/Footer'
+import { WhatsAppButton } from './components/WhatsAppButton'
 
 export default function App() {
   // CSR renders after the browser's initial fragment-scroll attempt,
@@ -34,6 +35,7 @@ export default function App() {
         <Cta />
       </main>
       <Footer />
+      <WhatsAppButton />
     </>
   )
 }

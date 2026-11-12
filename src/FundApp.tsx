@@ -3,6 +3,7 @@ import { PageHero } from './components/PageHero'
 import { FundStructure } from './components/FundStructure'
 import { FundGovernance } from './components/FundGovernance'
 import { Footer } from './components/Footer'
+import { WhatsAppButton } from './components/WhatsAppButton'
 
 export default function FundApp() {
   return (
@@ -26,6 +27,7 @@ export default function FundApp() {
         <FundGovernance />
       </main>
       <Footer />
+      <WhatsAppButton />
     </>
   )
 }

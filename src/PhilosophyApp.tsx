@@ -5,6 +5,7 @@ import { SangamRivers } from './components/SangamRivers'
 import { PhilosophyPillars } from './components/PhilosophyPillars'
 import { ReadNext } from './components/ReadNext'
 import { Footer } from './components/Footer'
+import { WhatsAppButton } from './components/WhatsAppButton'
 
 export default function PhilosophyApp() {
   return (
@@ -28,6 +29,7 @@ export default function PhilosophyApp() {
         <ReadNext />
       </main>
       <Footer />
+      <WhatsAppButton />
     </>
   )
 }
