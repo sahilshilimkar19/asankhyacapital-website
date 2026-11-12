@@ -18,7 +18,7 @@ export function FundTeaser() {
             Asankhya Capital — Bharat Growth Fund
           </h2>
           <p className={s.body}>
-            A proposed SEBI-registered Category III Alternative Investment Fund, built to
+            A registered SEBI Approved Category III Alternative Investment Fund, built to
             compound capital across listed equities, pre-IPO and anchor allotments, and
             structured instruments — for investors guided by one timeless rule:
           </p>

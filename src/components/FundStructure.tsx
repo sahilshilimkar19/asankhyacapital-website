@@ -4,7 +4,7 @@ import { FactTable } from './FactTable'
 import s from './FundStructure.module.css'
 
 const FACTS = [
-  { label: 'Classification', value: 'Category III AIF (proposed)' },
+  { label: 'Classification', value: 'Category III AIF' },
   { label: 'Capital contribution', value: '100% upfront' },
   { label: 'NAV frequency', value: 'Monthly' },
   { label: 'Mandate', value: 'Sector-agnostic, multi-asset' },

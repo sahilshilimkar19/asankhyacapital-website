@@ -19,7 +19,7 @@ export function Footer() {
         <div className={s.top}>
           <Logo onDark withWordmark size={26} strokeWidth={10} />
           <p className={s.blurb}>
-            Management Private Limited. A proposed SEBI-registered Category III Alternative
+            Management Private Limited. A registered SEBI Approved Category III Alternative
             Investment Fund.
           </p>
           <nav aria-label="Footer">
@@ -38,11 +38,11 @@ export function Footer() {
           <p>
             Asankhya Capital Management Private Limited. Strictly Private &amp; Confidential.
             This website does not constitute an offer to sell or a solicitation of an offer to
-            subscribe to units of any fund. The proposed fund is not yet established or
-            registered; all terms are indicative pending the Private Placement Memorandum.
+            subscribe to units of any fund. All terms are indicative pending the Private
+            Placement Memorandum.
           </p>
           <p>
-            {'SEBI Registration: [In Process]  ·  CIN: U66300GJ2026PTC178345  ·  © Asankhya Capital Management Private Limited'}
+            {'SEBI Registration: [To be added]  ·  CIN: U66300GJ2026PTC178345  ·  © Asankhya Capital Management Private Limited'}
           </p>
         </div>
       </div>

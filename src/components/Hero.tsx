@@ -31,7 +31,7 @@ const MAX_FADE_MS = 900
 
 /** Value first, label under — the gold-rule fact idiom used by FundTeaser. */
 const STATS = [
-  { value: 'In Process', label: 'SEBI Registration' },
+  { value: 'Registered', label: 'SEBI Registration' },
   { value: '50+ Years', label: 'Combined Leadership Experience' },
 ] as const
 
@@ -136,7 +136,7 @@ export function Hero() {
             <em className={s.accent}>structural growth</em> and exceptional execution.
           </Reveal>
           <Reveal i={2} as="p" className={s.lede}>
-            Asankhya Capital is a proposed SEBI-registered Category III AIF built for
+            Asankhya Capital is a registered SEBI Approved Category III AIF built for
             investors who measure returns in years, not quarters — sector-agnostic,
             research-led, and disciplined by our Sangam philosophy and six pillars framework.
           </Reveal>
