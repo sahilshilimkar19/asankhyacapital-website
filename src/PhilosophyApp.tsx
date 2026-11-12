@@ -19,7 +19,7 @@ export default function PhilosophyApp() {
           eyebrow="Investment Philosophy"
           title="The Sangam Philosophy"
           lede={
-            '"We invest in businesses with enduring competitive advantages operating at the intersection of India\'s structural growth and exceptional execution." Three rivers meeting at a confluence — Sangam — is the oldest metaphor in Indian geography for exactly this idea, and it is the one we have built our entire research process around.'
+            'We invest in businesses with enduring competitive advantages operating at the intersection of India\'s structural growth and exceptional execution. Three rivers meeting at a confluence — Sangam — is the oldest metaphor in Indian geography for exactly this idea, and it is the one we have built our entire research process around.'
           }
         />
         <SangamConfluence />

@@ -9,9 +9,9 @@ export function Philosophy() {
       </h2>
       <ScrollReveal as="figure" className={`container ${s.figure}`}>
         <blockquote className={s.quote}>
-          &ldquo;We invest in businesses with enduring competitive advantages operating at the{' '}
+          We invest in businesses with enduring competitive advantages operating at the{' '}
           <em className={s.accent}>intersection</em> of India&rsquo;s structural growth and
-          exceptional execution.&rdquo;
+          exceptional execution.
         </blockquote>
         <figcaption className={s.attribution}>The Asankhya Investment Philosophy</figcaption>
       </ScrollReveal>

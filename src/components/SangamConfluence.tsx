@@ -35,10 +35,10 @@ export function SangamConfluence() {
         <ScrollReveal group className={s.cols}>
           <div className={`onDark ${s.card}`} {...srItem(0)}>
             <blockquote className={s.quote}>
-              &ldquo;At Prayagraj, the Ganga, the Yamuna and the Saraswati meet at a point called
+              At Prayagraj, the Ganga, the Yamuna and the Saraswati meet at a point called
               Sangam &mdash; the confluence. Two rivers are visible; the third, Saraswati, is said
               to flow beneath them, unseen but decisive. Three currents, each substantial alone,
-              become something larger where they meet.&rdquo;
+              become something larger where they meet.
             </blockquote>
             <p className={s.thesis}>
               We do not invest in structural growth alone &mdash; that is thematic speculation. We
