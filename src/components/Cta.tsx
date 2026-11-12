@@ -1,4 +1,5 @@
 import { ScrollReveal } from './ScrollReveal'
+import { PHONE_DISPLAY, PHONE_HREF } from '../siteContact'
 import s from './Cta.module.css'
 
 export function Cta() {
@@ -14,6 +15,10 @@ export function Cta() {
           directly — no obligation, and no fund-specific terms shared until a suitability
           check is complete.
         </p>
+        {/* The number is in the label so desktops without a dialer can still read it */}
+        <a href={PHONE_HREF} className={`btn btnNavy ${s.call}`}>
+          Call {PHONE_DISPLAY}
+        </a>
       </ScrollReveal>
     </section>
   )

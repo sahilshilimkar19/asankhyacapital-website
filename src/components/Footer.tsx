@@ -1,4 +1,5 @@
 import { Logo } from './Logo'
+import { PHONE_DISPLAY, PHONE_HREF } from '../siteContact'
 import s from './Footer.module.css'
 
 // One centered row: every nav destination plus the footer-only extras
@@ -33,6 +34,11 @@ export function Footer() {
               ))}
             </ul>
           </nav>
+          <p className={s.phone}>
+            <a href={PHONE_HREF} className={s.link}>
+              {PHONE_DISPLAY}
+            </a>
+          </p>
         </div>
         <div className={s.legal}>
           <p>

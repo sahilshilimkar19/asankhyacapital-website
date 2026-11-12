@@ -37,6 +37,12 @@
   font-size: 12.5px;
 }
 
+.phone {
+  margin-top: 18px;
+  font-family: var(--font-sans);
+  font-size: 12.5px;
+}
+
 .link {
   transition: color 0.25s ease;
 }
