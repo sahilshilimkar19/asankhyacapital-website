@@ -17,6 +17,7 @@ export default defineConfig({
         philosophy: fileURLToPath(new URL('./philosophy.html', import.meta.url)),
         research: fileURLToPath(new URL('./research.html', import.meta.url)),
         team: fileURLToPath(new URL('./team.html', import.meta.url)),
+        'what-does-asankhya-mean': fileURLToPath(new URL('./what-does-asankhya-mean.html', import.meta.url)),
       },
     },
   },

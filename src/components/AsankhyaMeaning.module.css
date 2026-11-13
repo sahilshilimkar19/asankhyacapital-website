@@ -1,0 +1,126 @@
+/* Cream, as the deck's Section 01 slide */
+.meaning {
+  background: var(--cream);
+  padding: 88px 0;
+}
+
+.cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: center;
+}
+
+.block + .block {
+  margin-top: 36px;
+}
+
+.body {
+  margin-top: 12px;
+  color: var(--steel);
+  font-size: 15.5px;
+  line-height: 1.8;
+}
+
+.body strong {
+  color: var(--navy);
+  font-weight: 700;
+}
+
+/* System Devanagari faces only (Windows, macOS/iOS, Android, older Windows) —
+   no web font, so the page still makes zero third-party requests */
+.deva {
+  font-family: "Nirmala UI", "Kohinoor Devanagari", "Devanagari Sangam MN",
+    "Noto Sans Devanagari", Mangal, var(--font-sans);
+}
+
+/* ---- The name card ---- */
+.card {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 440px;
+  padding: 48px 32px 36px;
+  border-radius: 4px;
+  background: var(--navy);
+  text-align: center;
+}
+
+.field {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.gold {
+  fill: var(--gold-light);
+  opacity: 0.75;
+}
+
+.steel {
+  fill: var(--steel-light);
+  opacity: 0.45;
+}
+
+.mark {
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.word {
+  color: #fff;
+  font-size: 72px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+/* Left padding matches the tracking so the letter-spaced word stays centred */
+.translit {
+  margin-top: 14px;
+  padding-left: 8px;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  letter-spacing: 8px;
+  text-transform: uppercase;
+  color: var(--gold-light);
+}
+
+.gloss {
+  margin-top: 18px;
+  font-style: italic;
+  font-size: 17px;
+  color: var(--dark-body);
+}
+
+/* balance: two even lines rather than a lone last word */
+.line {
+  position: relative;
+  margin-top: 36px;
+  font-style: italic;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--gold-light);
+  text-wrap: balance;
+}
+
+@media (max-width: 900px) {
+  .cols {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .card {
+    min-height: 380px;
+    padding: 40px 24px 32px;
+  }
+
+  .word {
+    font-size: 56px;
+  }
+}

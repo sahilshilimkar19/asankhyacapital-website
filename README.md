@@ -1,7 +1,8 @@
 # Asankhya Capital — Website
 
-The official website for **Asankhya Capital** — a seven-page marketing site: homepage,
-About, Investment Philosophy, Bharat Growth Fund, Research & Insights, Team, and Contact.
+The official website for **Asankhya Capital** — an eight-page marketing site: homepage,
+About, What Does Asankhya Mean, Investment Philosophy, Bharat Growth Fund, Research & Insights,
+Team, and Contact.
 Every page is an exact implementation of the approved wireframe set.
 
 **Live:** https://asankhyacapital.com
@@ -58,6 +59,7 @@ Clean URLs work in dev and preview out of the box (Vite resolves `/about` →
 ├── index.html                  # homepage entry (per-page SEO/OG meta lives in each entry)
 ├── about.html  philosophy.html  bharat-growth-fund.html
 ├── research.html  team.html  contact.html      # one Vite MPA entry per page
+├── what-does-asankhya-mean.html
 ├── vercel.json                 # clean URLs, trailing-slash policy, asset caching
 ├── public/                     # copied to dist/ verbatim
 │   ├── 404.html                # standalone branded not-found page
