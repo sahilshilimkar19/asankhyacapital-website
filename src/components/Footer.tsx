@@ -6,6 +6,7 @@ import s from './Footer.module.css'
 // (the 6 Pillars homepage section and the Contact page).
 const LINKS: readonly { label: string; href: string }[] = [
   { label: 'About Us', href: '/about' },
+  { label: 'What Does Asankhya Mean', href: '/what-does-asankhya-mean' },
   { label: 'Investment Philosophy', href: '/philosophy' },
   { label: '6 Pillars Framework', href: '/#pillars' },
   { label: 'Bharat Growth Fund', href: '/bharat-growth-fund' },

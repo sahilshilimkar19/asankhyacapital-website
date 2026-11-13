@@ -6,6 +6,7 @@ import s from './Nav.module.css'
 // same-path fragment links still scroll without a reload.
 const NAV_LINKS = [
   { label: 'About', href: '/about' },
+  { label: 'Our Name', href: '/what-does-asankhya-mean' },
   { label: 'Philosophy', href: '/philosophy' },
   { label: 'Bharat Growth Fund', href: '/bharat-growth-fund' },
   { label: 'Team', href: '/team' },
