@@ -18,7 +18,7 @@ interface Member {
   photo?: string
 }
 
-// Deck order: the executive founders, then the board seat.
+// Deck order: the leadership, then the economist and the research analysts.
 const MEMBERS: readonly Member[] = [
   {
     name: 'Akhilesh Pathak, NIT Durgapur, IIMA',
@@ -43,6 +43,30 @@ const MEMBERS: readonly Member[] = [
     photo: '/team/madan-kumar-singh.jpg',
     blurb:
       "Built and executed multi-million dollar business for MNCs. Has been investing in India and US market for 20+ years. He developed a framework for identifying quality businesses supporting India's structural growth. In his international role, he has also analyzed emerging technologies.",
+  },
+  {
+    name: 'Dr. Deepa Dwivedi, PhD, M.A. Economics',
+    title: 'Economist',
+    initials: 'DD',
+    photo: '/team/deepa-dwivedi.jpg',
+    blurb:
+      'An Educator, Economist and an Investor in the stock market advising family offices. Dr. Deepa Dwivedi holds a PhD and MA in Economics, UGC-NET qualified, with over a decade of teaching experience at Vikram University. Based in Ahmedabad, she actively invests in financial markets and provides expert advisory services to institutions, leveraging her deep expertise to deliver strategic insights.',
+  },
+  {
+    name: 'Madhav Rathi, CFA L2',
+    title: 'Senior Research Analyst',
+    initials: 'MR',
+    photo: '/team/madhav-rathi.jpg',
+    blurb:
+      "CFA Level II with a focus on fundamental research and sector analysis. Uses a top-down approach and AI-driven tools to identify high-conviction investment opportunities in businesses aligned with India's long-term growth.",
+  },
+  {
+    name: 'Piyush Garodia, CFA L2',
+    title: 'Senior Research Analyst',
+    initials: 'PG',
+    photo: '/team/piyush-garodia.jpg',
+    blurb:
+      'CFA Level II cleared with expertise in fundamental equity research, financial modelling, and valuation and comparable company analysis. He has undertaken in-depth research and valuation of listed companies across the retail and FMCG sectors, supported by hands-on market research experience, and a strong foundation in investment research and business evaluation.',
   },
 ]
 

@@ -16,7 +16,7 @@ export default function TeamApp() {
           crumb="Team"
           eyebrow="Leadership & Team"
           title="An investment committee, not a single name."
-          lede="Built to remove single-person dependency from day one — three named roles, each with clear accountability, and a research process any of them can run."
+          lede="Built to remove single-person dependency from day one — six named roles, each with clear accountability, and a research process any of them can run."
         />
         <TeamGrid />
       </main>
