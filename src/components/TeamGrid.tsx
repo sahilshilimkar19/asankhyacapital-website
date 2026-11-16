@@ -51,7 +51,8 @@ export function TeamGrid() {
     <section className={s.teamSection} aria-label="Leadership roles">
       <ScrollReveal group className={`container ${s.grid}`}>
         {MEMBERS.map((m, i) => (
-          <article key={m.title} className={s.card} {...srItem(i)}>
+          // Keyed by name: several seats share a title (two Senior Research Analysts)
+          <article key={m.name ?? m.title} className={s.card} {...srItem(i)}>
             <div className={s.avatar}>
               {m.photo ? (
                 <img
