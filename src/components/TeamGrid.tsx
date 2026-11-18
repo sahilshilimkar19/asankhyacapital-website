@@ -53,20 +53,20 @@ const MEMBERS: readonly Member[] = [
       'An Educator, Economist and an Investor in the stock market advising family offices. Dr. Deepa Dwivedi holds a PhD and MA in Economics, UGC-NET qualified, with over a decade of teaching experience at Vikram University. Based in Ahmedabad, she actively invests in financial markets and provides expert advisory services to institutions, leveraging her deep expertise to deliver strategic insights.',
   },
   {
-    name: 'Madhav Rathi, CFA',
+    name: 'Madhav Rathi',
     title: 'Senior Research Analyst',
     initials: 'MR',
     photo: '/team/madhav-rathi.jpg',
     blurb:
-      "CFA Level II cleared with a focus on fundamental research and sector analysis. Uses a top-down approach and AI-driven tools to identify high-conviction investment opportunities in businesses aligned with India's long-term growth.",
+      "Focused on fundamental research and sector analysis. Uses a top-down approach and AI-driven tools to identify high-conviction investment opportunities in businesses aligned with India's long-term growth.",
   },
   {
-    name: 'Piyush Garodia, CFA',
+    name: 'Piyush Garodia',
     title: 'Senior Research Analyst',
     initials: 'PG',
     photo: '/team/piyush-garodia.jpg',
     blurb:
-      'CFA Level II cleared with expertise in fundamental equity research, financial modelling, and valuation and comparable company analysis. He has undertaken in-depth research and valuation of listed companies across the retail and FMCG sectors, supported by hands-on market research experience, and a strong foundation in investment research and business evaluation.',
+      'Experienced in fundamental equity research, financial modelling, and valuation and comparable company analysis. He has undertaken in-depth research and valuation of listed companies across the retail and FMCG sectors, supported by hands-on market research experience, and a strong foundation in investment research and business evaluation.',
   },
 ]
 
