@@ -58,7 +58,7 @@ const MEMBERS: readonly Member[] = [
     initials: 'MR',
     photo: '/team/madhav-rathi.jpg',
     blurb:
-      "Focused on fundamental research and sector analysis. Uses a top-down approach and AI-driven tools to identify high-conviction investment opportunities in businesses aligned with India's long-term growth.",
+      "CFA Level II cleared with a focus on fundamental research and sector analysis. Uses a top-down approach and AI-driven tools to identify high-conviction investment opportunities in businesses aligned with India's long-term growth.",
   },
   {
     name: 'Piyush Garodia',
@@ -66,7 +66,7 @@ const MEMBERS: readonly Member[] = [
     initials: 'PG',
     photo: '/team/piyush-garodia.jpg',
     blurb:
-      'Experienced in fundamental equity research, financial modelling, and valuation and comparable company analysis. He has undertaken in-depth research and valuation of listed companies across the retail and FMCG sectors, supported by hands-on market research experience, and a strong foundation in investment research and business evaluation.',
+      'CFA Level II cleared with expertise in fundamental equity research, financial modelling, and valuation and comparable company analysis. He has undertaken in-depth research and valuation of listed companies across the retail and FMCG sectors, supported by hands-on market research experience, and a strong foundation in investment research and business evaluation.',
   },
 ]
 
