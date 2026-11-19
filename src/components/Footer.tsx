@@ -49,7 +49,7 @@ export function Footer() {
             Placement Memorandum.
           </p>
           <p>
-            {'SEBI Registration: [To be added]  ·  CIN: U66300GJ2026PTC178345  ·  © Asankhya Capital Management Private Limited'}
+            {'SEBI Registration No: IN/AIF3/26-27/2386  ·  CIN: U66300GJ2026PTC178345  ·  © Asankhya Capital Management Private Limited'}
           </p>
         </div>
       </div>

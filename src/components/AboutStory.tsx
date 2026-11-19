@@ -7,7 +7,7 @@ const FACTS = [
   { label: 'Entity', value: 'Asankhya Capital Management Pvt Ltd' },
   { label: 'CIN', value: 'U66300GJ2026PTC178345', breakAnywhere: true },
   { label: 'Fund', value: 'Category III AIF (Bharat Growth Fund)' },
-  { label: 'SEBI Registration', value: '[To be added]' },
+  { label: 'SEBI Registration No.', value: 'IN/AIF3/26-27/2386', breakAnywhere: true },
   { label: 'Headquarters', value: 'Gujarat, India' },
   { label: 'Founded', value: '2026' },
 ] as const
