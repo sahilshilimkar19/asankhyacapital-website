@@ -23,7 +23,7 @@ export function AboutStory() {
           </h2>
           <p className={s.body}>
             We are building Asankhya Capital — Bharat Growth Fund as a registered SEBI Approved
-            Category III Alternative Investment Fund, with a founding team that has spent
+            Category III Alternative Investment Fund (IN/AIF3/26-27/2386), with a founding team that has spent
             careers in institutional research, portfolio management and corporate finance
             before bringing that experience to a single platform. Our thesis — that the best
             long-term returns sit at the intersection of genuine structural growth and

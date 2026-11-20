@@ -22,7 +22,7 @@ export function Footer() {
           <Logo onDark withWordmark size={26} strokeWidth={10} />
           <p className={s.blurb}>
             Management Private Limited. A registered SEBI Approved Category III Alternative
-            Investment Fund.
+            Investment Fund (IN/AIF3/26-27/2386).
           </p>
           <nav aria-label="Footer">
             <ul className={s.links}>

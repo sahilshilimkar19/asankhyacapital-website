@@ -17,7 +17,7 @@ export default function FundApp() {
           crumb="Bharat Growth Fund"
           eyebrow="Our Flagship Vehicle"
           title="Asankhya Capital — Bharat Growth Fund"
-          lede="A registered SEBI Approved Category III Alternative Investment Fund: a sector-agnostic, multi-asset vehicle investing across listed equities, pre-IPO and anchor allotments, and permitted structured instruments."
+          lede="A registered SEBI Approved Category III Alternative Investment Fund (IN/AIF3/26-27/2386): a sector-agnostic, multi-asset vehicle investing across listed equities, pre-IPO and anchor allotments, and permitted structured instruments."
         >
           <a href="/philosophy" className="btn btnNavy">
             Read Our Philosophy
